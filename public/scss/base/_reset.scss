@@ -1,0 +1,72 @@
+@use "../abstracts" as *;
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-family: inherit;
+	box-sizing: border-box;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+a, button {
+	color: inherit;
+	text-decoration: none;
+	background-color: transparent;
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+}
+
+html {
+	min-width: 350px;
+	font-family: $font-sans;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	
+	body {
+		--marginH: 4vh;
+
+		--primary-1: hsl(230, 19%, 6%);
+		--primary-2: hsl(0deg, 0%, 85%);
+		--primary-3: hsl(286, 50%, 29%);
+		--black: hsl(0deg, 0%, 0%);
+
+		--secondary-1: hsl(181, 77%, 24%);
+		--secondary-2: hsl(40, 98%, 40%);
+		--secondary-3: hsl(354, 92%, 35%);
+		--secondary-4: hsl(113, 93%, 30%);
+
+		min-height: 100vh;
+
+		display: flex;
+		flex-direction: column;
+
+		font-size: 16px;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
+		main {
+			flex-grow: 1;
+		}
+	}
+
+	/* Styles pour les navigateurs Chrome et Safari */
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		
+		body {
+			&::-webkit-scrollbar {
+				width: 5px;
+				background: var(--primary-1);
+			}
+			
+			&::-webkit-scrollbar-thumb {
+				width: 5px;
+				background: var(--primary-3);
+			}
+		}
+	}
+}

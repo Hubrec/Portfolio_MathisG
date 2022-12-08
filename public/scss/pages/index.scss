@@ -1,0 +1,62 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+@use "../components/header";
+@use "../components/footer";
+
+html {
+
+    overflow-y: hidden;
+
+    body {
+        --gearlength: 70vh;
+
+        display: flex;
+        flex-direction: column;
+        margin:0;
+        text-align: center;
+        font-family: Arial;
+        background-color: var(--primary-1);
+
+        @for $i from 1 through 4 {
+            
+            .gear-#{$i} {
+                fill: var(--secondary-#{$i});
+                height: var(--gearlength);
+                width: var(--gearlength);
+                position: absolute;
+                transition: scale .5s ease-in-out;
+
+                &:hover {
+                    fill: var(--primary-2);
+                    scale: 1.1;
+                }
+            }
+        }
+
+        .gear-1 {
+            top: calc( 0.33 * var(--gearlength));
+            left: calc(var(--gearlength) / -2.1);
+        }
+
+        .gear-2 {
+            top: calc( 0.7 * var(--gearlength));
+            right: calc(var(--gearlength) / -2.1);
+        }
+
+        .gear-3 {
+            bottom: calc( -0.5 * var(--gearlength));
+            left: calc(25vw - 100px);
+        }
+
+        .gear-4 {
+            scale: 0.7;
+            bottom: calc( 0.15 * var(--gearlength));
+            right: calc(25vw - 100px);
+
+            &:hover {
+                scale: 0.76;
+            }
+        }
+    }
+}
