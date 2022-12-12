@@ -11,11 +11,7 @@ header {
         font-size: xx-large;
         margin: var(--marginH) 0 var(--marginH) 0;
         transition: all .5s ease-in-out;
-        color: var(--primary-3);
-
-        &:hover {
-            transform: scale(1.05);
-        }
+        color: var(--primary-2);
     }
 
     img.iconAccueil {
@@ -25,10 +21,6 @@ header {
         left: 20px;
         top: 20px;
         transition: transform .5s ease-in-out;
-
-        &:hover {
-            transform: scale(1.05);
-        }
     }
     
     .menu-deroulant {
@@ -39,15 +31,94 @@ header {
         top: 20px;
         transition: transform .3s ease-in-out;
 
-        &:hover {
-            transform: translate(-7px, 0);
+        svg {
+
+            rect {
+                stroke: var(--primary-2);
+                fill: var(--primary-2);
+                transition: all .3s ease;
+            }
+
+            &:hover {
+                
+                rect.one {
+                    transform: rotate(47deg);
+                    translate: 15px -1px;
+                }
+
+                rect.three {
+                    transform: rotate(-47deg);
+                    translate: -21px 15px;
+                }
+            }
         }
 
-        rect {
-            stroke: var(--primary-3);
-            fill: var(--primary-3);
+        svg.show {
+            rect.one {
+                transform: rotate(47deg);
+                translate: 15px -1px;
+            }
+
+            rect.two {
+                opacity: 0;
+            }
+
+            rect.three {
+                transform: rotate(-47deg);
+                translate: -21px 15px;
+            }
         }
+        
+        ul {
+            z-index: 10;
+            position: absolute;
+            right: -30px;
+            width: 250px;
+            background-color: var(--black);
+            border-radius: 2%;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .5s ease-in-out;
+            transition-property: opacity, visibility;
+
+            li {
+                margin: 10px 0 10px 0;
+                font-size: x-large;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.03);
+                }
+            }
+        }
+
+        ul.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
     }
     
 }
 
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@media screen{
+    @media (max-width: 768px) {
+        header {
+            h1 {
+                font-size: x-large;
+            }
+        }
+    }   
+}

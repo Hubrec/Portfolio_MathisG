@@ -36,6 +36,10 @@ html body {
   --secondary-2: hsl(40, 98%, 40%);
   --secondary-3: hsl(354, 92%, 35%);
   --secondary-4: hsl(113, 93%, 30%);
+  --secondary-1-fade: hsl(181, 61%, 49%);
+  --secondary-2-fade: hsl(40, 100%, 59%);
+  --secondary-3-fade: hsl(354, 100%, 56%);
+  --secondary-4-fade: hsl(113, 76%, 52%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -45,6 +49,9 @@ html body {
 }
 html body main {
   flex-grow: 1;
+}
+html body a {
+  color: var(--primary-2);
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   html body::-webkit-scrollbar {
@@ -67,10 +74,7 @@ header h1 {
   font-size: xx-large;
   margin: var(--marginH) 0 var(--marginH) 0;
   transition: all 0.5s ease-in-out;
-  color: var(--primary-3);
-}
-header h1:hover {
-  transform: scale(1.05);
+  color: var(--primary-2);
 }
 header img.iconAccueil {
   width: 50px;
@@ -80,9 +84,6 @@ header img.iconAccueil {
   top: 20px;
   transition: transform 0.5s ease-in-out;
 }
-header img.iconAccueil:hover {
-  transform: scale(1.05);
-}
 header .menu-deroulant {
   width: 50px;
   height: 50px;
@@ -91,14 +92,70 @@ header .menu-deroulant {
   top: 20px;
   transition: transform 0.3s ease-in-out;
 }
-header .menu-deroulant:hover {
-  transform: translate(-7px, 0);
+header .menu-deroulant svg rect {
+  stroke: var(--primary-2);
+  fill: var(--primary-2);
+  transition: all 0.3s ease;
 }
-header .menu-deroulant rect {
-  stroke: var(--primary-3);
-  fill: var(--primary-3);
+header .menu-deroulant svg:hover rect.one {
+  transform: rotate(47deg);
+  translate: 15px -1px;
+}
+header .menu-deroulant svg:hover rect.three {
+  transform: rotate(-47deg);
+  translate: -21px 15px;
+}
+header .menu-deroulant svg.show rect.one {
+  transform: rotate(47deg);
+  translate: 15px -1px;
+}
+header .menu-deroulant svg.show rect.two {
+  opacity: 0;
+}
+header .menu-deroulant svg.show rect.three {
+  transform: rotate(-47deg);
+  translate: -21px 15px;
+}
+header .menu-deroulant ul {
+  z-index: 10;
+  position: absolute;
+  right: -30px;
+  width: 250px;
+  background-color: var(--black);
+  border-radius: 2%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  transition-property: opacity, visibility;
+}
+header .menu-deroulant ul li {
+  margin: 10px 0 10px 0;
+  font-size: x-large;
+  transition: all 0.3s ease-in-out;
+}
+header .menu-deroulant ul li:hover {
+  transform: scale(1.03);
+}
+header .menu-deroulant ul.show {
+  opacity: 1;
+  visibility: visible;
 }
 
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: x-large;
+  }
+}
 html {
   overflow-y: hidden;
 }
@@ -116,56 +173,79 @@ html body .gear-1 {
   height: var(--gearlength);
   width: var(--gearlength);
   position: absolute;
-  transition: scale 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  transition-property: scale, fill;
 }
 html body .gear-1:hover {
-  fill: var(--primary-2);
-  scale: 1.1;
+  fill: var(--secondary-1-fade);
 }
 html body .gear-2 {
   fill: var(--secondary-2);
   height: var(--gearlength);
   width: var(--gearlength);
   position: absolute;
-  transition: scale 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  transition-property: scale, fill;
 }
 html body .gear-2:hover {
-  fill: var(--primary-2);
-  scale: 1.1;
+  fill: var(--secondary-2-fade);
 }
 html body .gear-3 {
   fill: var(--secondary-3);
   height: var(--gearlength);
   width: var(--gearlength);
   position: absolute;
-  transition: scale 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  transition-property: scale, fill;
 }
 html body .gear-3:hover {
-  fill: var(--primary-2);
-  scale: 1.1;
+  fill: var(--secondary-3-fade);
 }
 html body .gear-4 {
   fill: var(--secondary-4);
   height: var(--gearlength);
   width: var(--gearlength);
   position: absolute;
-  transition: scale 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  transition-property: scale, fill;
 }
 html body .gear-4:hover {
-  fill: var(--primary-2);
-  scale: 1.1;
+  fill: var(--secondary-4-fade);
 }
 html body .gear-1 {
+  scale: 1.1;
   top: calc(0.33 * var(--gearlength));
   left: calc(var(--gearlength) / -2.1);
 }
+html body .gear-1:hover {
+  scale: 1.16;
+}
+html body .gear-1:hover ~ h1 {
+  visibility: visible;
+  animation: slideLeft 0.5s ease forwards;
+}
 html body .gear-2 {
+  scale: 1.2;
   top: calc(0.7 * var(--gearlength));
   right: calc(var(--gearlength) / -2.1);
+}
+html body .gear-2:hover {
+  scale: 1.26;
+}
+html body .gear-2:hover ~ h1 {
+  visibility: visible;
+  animation: slideRight 0.5s ease forwards;
 }
 html body .gear-3 {
   bottom: calc(-0.5 * var(--gearlength));
   left: calc(25vw - 100px);
+}
+html body .gear-3:hover {
+  scale: 1.06;
+}
+html body .gear-3:hover ~ h1 {
+  visibility: visible;
+  animation: slideTop 0.5s ease forwards;
 }
 html body .gear-4 {
   scale: 0.7;
@@ -174,6 +254,97 @@ html body .gear-4 {
 }
 html body .gear-4:hover {
   scale: 0.76;
+}
+html body .gear-4:hover ~ h1 {
+  visibility: visible;
+  animation: slideBottom 0.5s ease forwards;
+}
+html body div.divgears h1 {
+  position: absolute;
+  font-size: xx-large;
+  color: var(--primary-2);
+  border-radius: 5px;
+  padding: calc(var(--marginH) * 1.5) calc(var(--marginH) * 3) calc(var(--marginH) * 1.5) calc(var(--marginH) * 3);
+  z-index: -1;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  transition-property: slideLeft, slideRight, slideTop, slideBottom;
+  opacity: 15%;
+}
+html body div.divgears h1.titleGear1 {
+  background-color: var(--secondary-1);
+}
+html body div.divgears h1.titleGear2 {
+  background-color: var(--secondary-2);
+}
+html body div.divgears h1.titleGear3 {
+  background-color: var(--secondary-3);
+}
+html body div.divgears h1.titleGear4 {
+  background-color: var(--secondary-4);
+}
+html body div.divgears h1.titleGear1 {
+  top: calc(0.33 * var(--gearlength));
+  left: calc(var(--gearlength) * 0.65);
+  transform: translateX(-100%);
+}
+html body div.divgears h1.titleGear2 {
+  top: calc(0.4 * var(--gearlength));
+  right: calc(var(--gearlength) * 0.65);
+  transform: translateX(100%);
+  z-index: 11;
+}
+html body div.divgears h1.titleGear3 {
+  bottom: calc(0.65 * var(--gearlength));
+  left: calc(32vw - 100px);
+  transform: translateY(-200%);
+}
+html body div.divgears h1.titleGear4 {
+  bottom: calc(0.8 * var(--gearlength));
+  left: calc(33vw - 100px);
+  transform: translateY(200%);
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 15%;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 15%;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-200%);
+    opacity: 15%;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+@keyframes slideTop {
+  0% {
+    transform: translateY(200%);
+    opacity: 15%;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

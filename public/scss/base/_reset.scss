@@ -40,6 +40,11 @@ html {
 		--secondary-3: hsl(354, 92%, 35%);
 		--secondary-4: hsl(113, 93%, 30%);
 
+		--secondary-1-fade: hsl(181, 61%, 49%);
+		--secondary-2-fade: hsl(40, 100%, 59%);
+		--secondary-3-fade: hsl(354, 100%, 56%);
+		--secondary-4-fade: hsl(113, 76%, 52%);
+
 		min-height: 100vh;
 
 		display: flex;
@@ -51,6 +56,10 @@ html {
 
 		main {
 			flex-grow: 1;
+		}
+
+		a {
+			color: var(--primary-2);
 		}
 	}
 

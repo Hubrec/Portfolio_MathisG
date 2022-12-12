@@ -2,7 +2,6 @@
 @use "../base" as *;
 
 @use "../components/header";
-@use "../components/footer";
 
 html {
 
@@ -25,28 +24,57 @@ html {
                 height: var(--gearlength);
                 width: var(--gearlength);
                 position: absolute;
-                transition: scale .5s ease-in-out;
+                transition: all .5s ease-in-out;
+                transition-property: scale, fill;
 
                 &:hover {
-                    fill: var(--primary-2);
-                    scale: 1.1;
+                    fill: var(--secondary-#{$i}-fade);
                 }
             }
         }
 
         .gear-1 {
+            scale: 1.1;
             top: calc( 0.33 * var(--gearlength));
             left: calc(var(--gearlength) / -2.1);
+
+            &:hover {
+                scale: 1.16;
+
+                & ~ h1  {
+                    visibility: visible;
+                    animation: slideLeft .5s ease forwards;
+                }
+            }
         }
 
         .gear-2 {
+            scale: 1.2;
             top: calc( 0.7 * var(--gearlength));
             right: calc(var(--gearlength) / -2.1);
+
+            &:hover {
+                scale: 1.26;
+
+                & ~ h1  {
+                    visibility: visible;
+                    animation: slideRight .5s ease forwards;
+                }
+            }
         }
 
         .gear-3 {
             bottom: calc( -0.5 * var(--gearlength));
             left: calc(25vw - 100px);
+
+            &:hover {
+                scale: 1.06;
+
+                & ~ h1  {
+                    visibility: visible;
+                    animation: slideTop .5s ease forwards;
+                } 
+            }
         }
 
         .gear-4 {
@@ -56,7 +84,106 @@ html {
 
             &:hover {
                 scale: 0.76;
+
+                & ~ h1  {
+                    visibility: visible;
+                    animation: slideBottom .5s ease forwards;
+                } 
             }
         }
+
+        div.divgears {
+
+            h1 {
+                position: absolute;
+                font-size: xx-large;
+                color: var(--primary-2);
+                // border-radius: 50% 20% / 10% 40%;
+                border-radius: 5px;
+                padding: calc(var(--marginH) * 1.5) calc(var(--marginH) * 3) calc(var(--marginH) * 1.5) calc(var(--marginH) * 3);
+                z-index: -1;
+                pointer-events: none;
+                visibility: hidden;
+                transition: all .5s ease-in-out;
+                transition-property: slideLeft, slideRight, slideTop, slideBottom;
+                opacity: 15%;
+
+                @for $j from 1 through 4 {
+                    
+                    &.titleGear#{$j} {
+                        background-color: var(--secondary-#{$j});
+                    }
+                }
+            }
+
+            h1.titleGear1 {
+                top: calc( 0.33 * var(--gearlength));
+                left: calc(var(--gearlength) * 0.65);
+                transform: translateX(-100%);
+            }
+
+            h1.titleGear2 {
+                top: calc( 0.40 * var(--gearlength));
+                right: calc(var(--gearlength) * 0.65);
+                transform: translateX(100%);
+                z-index: 11;
+            }
+
+            h1.titleGear3 {
+                bottom: calc( 0.65 * var(--gearlength));
+                left: calc(32vw - 100px);
+                transform: translateY(-200%);
+            }
+
+            h1.titleGear4 {                
+                bottom: calc( 0.8 * var(--gearlength));
+                left: calc(33vw - 100px);
+                transform: translateY(200%);
+            }
+        }
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 15%;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 15%;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-200%);
+        opacity: 15%;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(200%);
+        opacity: 15%;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 100%;
     }
 }
