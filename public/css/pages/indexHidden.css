@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a, button {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+html {
+  min-width: 350px;
+  font-family: "Inter", "Open Sans", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  /* Styles pour les navigateurs Chrome et Safari */
+}
+html body {
+  --marginH: 4vh;
+  --primary-1: hsl(0, 0%, 6%);
+  --primary-2: hsl(0deg, 0%, 85%);
+  --primary-3: hsl(286, 50%, 29%);
+  --black: hsl(0, 0%, 1%);
+  --secondary-1: hsl(181, 77%, 24%);
+  --secondary-2: hsl(40, 98%, 40%);
+  --secondary-3: hsl(354, 92%, 35%);
+  --secondary-4: hsl(113, 93%, 30%);
+  --secondary-1-fade: hsl(181, 61%, 49%);
+  --secondary-2-fade: hsl(40, 100%, 59%);
+  --secondary-3-fade: hsl(354, 100%, 56%);
+  --secondary-4-fade: hsl(113, 76%, 52%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html body main {
+  flex-grow: 1;
+}
+html body a {
+  color: var(--primary-2);
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  html body::-webkit-scrollbar {
+    width: 5px;
+    background: var(--primary-1);
+  }
+  html body::-webkit-scrollbar-thumb {
+    width: 5px;
+    background: var(--primary-3);
+  }
+}
+
+section.sectGears {
+  transition: opacity 1.3s ease-in-out;
+}
+
+section.hiddenPages {
+  height: 90vh;
+  width: 80vw;
+}
+section.hiddenPages section {
+  visibility: hidden;
+  position: absolute;
+  height: 85vh;
+  width: 80vw;
+  z-index: 12;
+  bottom: -90vh;
+  left: 10vw;
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  border-radius: 11px;
+  transition: all 1s ease-in-out;
+}
+section.hiddenPages section.active {
+  visibility: visible;
+  bottom: 0;
+}
+section.hiddenPages section.grow {
+  bottom: 0;
+  height: 95vh;
+  width: 94vw;
+  left: 3vw;
+  border-radius: 5px;
+}
+section.hiddenPages section ul {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+}
+section.hiddenPages section ul li.grow {
+  margin: 7px 11px 7px 11px;
+  padding: 11px;
+  border-radius: 100%;
+  background-color: green;
+}
+section.hiddenPages section ul li.grow:hover {
+  box-shadow: 0 0 8px green, inset 0 0 8px green, 0 0 16px #2eff27, inset 0 0 16px #1aff12, 0 0 32px #5eff59, inset 0 0 32px #43f33d;
+}
+section.hiddenPages section ul li.closer {
+  margin: 7px 11px 7px 11px;
+  padding: 11px;
+  border-radius: 100%;
+  background-color: red;
+}
+section.hiddenPages section ul li.closer:hover {
+  box-shadow: 0 0 8px rgb(255, 77, 77), inset 0 0 8px rgb(255, 90, 90), 0 0 16px #ff4848, inset 0 0 16px #ff6d6d, 0 0 32px #ff1d1d, inset 0 0 32px #ff1010;
+}
+
+/*# sourceMappingURL=indexHidden.css.map */

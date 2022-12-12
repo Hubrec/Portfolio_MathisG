@@ -8,7 +8,7 @@ const sqrt2 = gear2[0].getBoundingClientRect();
 const sqrt3 = gear3[0].getBoundingClientRect();
 const sqrt4 = gear4[0].getBoundingClientRect();
 
-const opacityPercent = "70%";
+const opacityPercent = "55%";
 
 document.onmousemove = function(e) {
     var x = e.pageX;
@@ -62,17 +62,21 @@ function blurGears() {
         gear1[0].style.opacity = opacityPercent;
         gear2[0].style.opacity = opacityPercent;
         gear3[0].style.opacity = opacityPercent;
+        gear4[0].style.opacity = "100%";
     } else if (gear3[0].classList.contains('hover')) {
         gear1[0].style.opacity = opacityPercent;
         gear2[0].style.opacity = opacityPercent;
+        gear3[0].style.opacity = "100%";
         gear4[0].style.opacity = opacityPercent;
     } else if (gear2[0].classList.contains('hover')) {
         gear1[0].style.opacity = opacityPercent;
+        gear2[0].style.opacity = "100%";
         gear3[0].style.opacity = opacityPercent;
         gear4[0].style.opacity = opacityPercent;
     } else if (gear1[0].classList.contains('hover')) {
+        gear1[0].style.opacity = "100%";
         gear2[0].style.opacity = opacityPercent;
-        gear2[0].style.opacity = opacityPercent;
+        gear3[0].style.opacity = opacityPercent;
         gear4[0].style.opacity = opacityPercent;
     } else {
         gear1[0].style.opacity = "100%";
