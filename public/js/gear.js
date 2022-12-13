@@ -55,7 +55,7 @@ document.onmousemove = function(e) {
     }
 
     blurGears();
-}
+};
 
 function blurGears() {
     if (gear4[0].classList.contains('hover')) {
@@ -84,36 +84,36 @@ function blurGears() {
         gear3[0].style.opacity = "100%";
         gear4[0].style.opacity = "100%";
     }
-}
+};
 
 gear1[0].onmouseenter = function() {
     this.classList.add('hover');
-}
+};
 
 gear1[0].onmouseleave = function() {
     this.classList.remove('hover');
-}
+};
 
 gear2[0].onmouseenter = function() {
     this.classList.add('hover');
-}
+};
 
 gear2[0].onmouseleave = function() {
     this.classList.remove('hover');
-}
+};
 
 gear3[0].onmouseenter = function() {
     this.classList.add('hover');
-}
+};
 
 gear3[0].onmouseleave = function() {
     this.classList.remove('hover');
-}
+};
 
 gear4[0].onmouseenter = function() {
     this.classList.add('hover');
-}
+};
 
 gear4[0].onmouseleave = function() {
     this.classList.remove('hover');
-}
+};

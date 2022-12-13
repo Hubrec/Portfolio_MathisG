@@ -33,13 +33,13 @@ html body {
   --primary-3: hsl(286, 50%, 29%);
   --black: hsl(0, 0%, 1%);
   --secondary-1: hsl(181, 77%, 24%);
-  --secondary-2: hsl(40, 98%, 40%);
-  --secondary-3: hsl(354, 92%, 35%);
-  --secondary-4: hsl(113, 93%, 30%);
+  --secondary-2: hsl(354, 92%, 35%);
+  --secondary-3: hsl(113, 93%, 30%);
+  --secondary-4: hsl(40, 98%, 40%);
   --secondary-1-fade: hsl(181, 61%, 49%);
-  --secondary-2-fade: hsl(40, 100%, 59%);
-  --secondary-3-fade: hsl(354, 100%, 56%);
-  --secondary-4-fade: hsl(113, 76%, 52%);
+  --secondary-2-fade: hsl(354, 100%, 56%);
+  --secondary-3-fade: hsl(113, 76%, 52%);
+  --secondary-4-fade: hsl(40, 100%, 59%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -68,10 +68,6 @@ section.sectGears {
   transition: opacity 1.3s ease-in-out;
 }
 
-section.hiddenPages {
-  height: 90vh;
-  width: 80vw;
-}
 section.hiddenPages section {
   visibility: hidden;
   position: absolute;
@@ -82,9 +78,10 @@ section.hiddenPages section {
   left: 10vw;
   background-color: var(--black);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   border-radius: 11px;
-  transition: all 1s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 section.hiddenPages section.active {
   visibility: visible;
@@ -97,28 +94,107 @@ section.hiddenPages section.grow {
   left: 3vw;
   border-radius: 5px;
 }
-section.hiddenPages section ul {
+section.hiddenPages section div.content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin-top: 5vh;
+}
+section.hiddenPages section h1 {
+  font-size: x-large;
+  color: var(--primary-2);
+  pointer-events: none;
+  padding-top: 3vh;
+}
+section.hiddenPages section.page1 div.separator {
+  margin-top: 4vh;
+  padding: 3px 30vw 3px 30vw;
+  background-color: var(--secondary-1);
+  border-radius: 10px;
+}
+section.hiddenPages section.page2 div.separator {
+  margin-top: 4vh;
+  padding: 3px 30vw 3px 30vw;
+  background-color: var(--secondary-2);
+  border-radius: 10px;
+}
+section.hiddenPages section.page3 div.separator {
+  margin-top: 4vh;
+  padding: 3px 30vw 3px 30vw;
+  background-color: var(--secondary-3);
+  border-radius: 10px;
+}
+section.hiddenPages section.page4 div.separator {
+  margin-top: 4vh;
+  padding: 3px 30vw 3px 30vw;
+  background-color: var(--secondary-4);
+  border-radius: 10px;
+}
+section.hiddenPages section ul.nav {
   display: flex;
   flex-direction: row;
   height: 20px;
 }
-section.hiddenPages section ul li.grow {
+section.hiddenPages section ul.nav li.grow {
   margin: 7px 11px 7px 11px;
   padding: 11px;
   border-radius: 100%;
   background-color: green;
 }
-section.hiddenPages section ul li.grow:hover {
+section.hiddenPages section ul.nav li.grow:hover {
   box-shadow: 0 0 8px green, inset 0 0 8px green, 0 0 16px #2eff27, inset 0 0 16px #1aff12, 0 0 32px #5eff59, inset 0 0 32px #43f33d;
 }
-section.hiddenPages section ul li.closer {
+section.hiddenPages section ul.nav li.closer {
   margin: 7px 11px 7px 11px;
   padding: 11px;
   border-radius: 100%;
   background-color: red;
 }
-section.hiddenPages section ul li.closer:hover {
+section.hiddenPages section ul.nav li.closer:hover {
   box-shadow: 0 0 8px rgb(255, 77, 77), inset 0 0 8px rgb(255, 90, 90), 0 0 16px #ff4848, inset 0 0 16px #ff6d6d, 0 0 32px #ff1d1d, inset 0 0 32px #ff1010;
+}
+section.hiddenPages section.myContacts div.content {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section.hiddenPages section.myContacts ul {
+  display: flex;
+  flex-direction: row;
+}
+section.hiddenPages section.myContacts ul li {
+  --lengh-svg: calc(5vw + 50px);
+}
+section.hiddenPages section.myContacts ul li svg {
+  fill: var(--primary-2);
+  margin: calc(2vw + 10px);
+  transition: all 0.3s ease-in-out;
+}
+section.hiddenPages section.myContacts ul li svg:hover {
+  transform: scale(1.05);
+}
+section.hiddenPages section.myContacts ul li.instagram svg {
+  height: var(--lengh-svg);
+  width: var(--lengh-svg);
+}
+section.hiddenPages section.myContacts ul li.instagram svg:hover {
+  fill: rgb(255, 134, 134);
+}
+section.hiddenPages section.myContacts ul li.linkedin svg {
+  height: calc(5vw + 30px);
+  width: calc(5vw + 30px);
+  position: relative;
+  top: 10px;
+}
+section.hiddenPages section.myContacts ul li.linkedin svg:hover {
+  fill: rgb(124, 124, 255);
+}
+section.hiddenPages section.myContacts ul li.mail svg {
+  height: var(--lengh-svg);
+  width: var(--lengh-svg);
+}
+section.hiddenPages section.myContacts ul li.mail svg:hover {
+  fill: lightgreen;
 }
 
 /*# sourceMappingURL=indexHidden.css.map */
