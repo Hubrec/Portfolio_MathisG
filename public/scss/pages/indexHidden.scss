@@ -56,7 +56,7 @@ section.hiddenPages {
 
                 div.separator {
                     margin-top: 4vh;
-                    padding: 3px 30vw 3px 30vw;
+                    padding: 3px 30% 3px 30%;
                     background-color: var(--secondary-#{$i});
                     border-radius: 10px;
                 }
@@ -110,66 +110,90 @@ section.hiddenPages {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-
-        ul {
-            display: flex;
-            flex-direction: row;
-
-            li {
-            --lengh-svg: calc(5vw + 50px);
-
-                svg {
-                    fill:var(--primary-2);
-                    margin: calc(2vw + 10px);
-                    transition: all .3s ease-in-out;
-
-                    &:hover {
-                        transform: scale(1.05);
-                    }
-                }
-
-                &.instagram {
-
-                    svg {
-                        height: var(--lengh-svg);
-                        width: var(--lengh-svg);
-                        
-                        &:hover {
-                            fill: rgb(255, 134, 134);
-                        }
-                    }
-                }
-
-                &.linkedin {
-
-                    svg {
-                        height: calc( 5vw + 30px);
-                        width: calc( 5vw + 30px);
-                        position: relative;
-                        top: 10px;
-
-                        &:hover {
-                            fill:rgb(124, 124, 255);
-                        }
-                    }
-                }
-
-                &.mail {
-
-                    svg {
-                        height: var(--lengh-svg);
-                        width: var(--lengh-svg);
-                        
-                        &:hover {
-                            fill: lightgreen;
-                        }
-                    }
-                }
-            }
             
+            ul {
+                display: flex;
+                flex-direction: row;
+    
+                li {
+                --lengh-svg: calc(5vw + 50px);
+    
+                    svg {
+                        fill:var(--primary-2);
+                        margin: calc(2vw + 10px);
+                        transition: all .3s ease-in-out;
+    
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+    
+                    &.instagram {
+    
+                        svg {
+                            height: var(--lengh-svg);
+                            width: var(--lengh-svg);
+                            
+                            &:hover {
+                                fill: rgb(255, 134, 134);
+                            }
+                        }
+                    }
+    
+                    &.linkedin {
+    
+                        svg {
+                            height: calc( 5vw + 26px);
+                            width: calc( 5vw + 26px);
+                            position: relative;
+                            top: 11px;
+    
+                            &:hover {
+                                fill:rgb(255, 117, 237);
+                            }
+                        }
+                    }
+    
+                    &.mail {
+    
+                        svg {
+                            height: var(--lengh-svg);
+                            width: var(--lengh-svg);
+                            
+                            &:hover {
+                                fill: lightgreen;
+                            }
+                        }
+                    }
+    
+                    &.discord {
+                            
+                        svg {
+                            height: var(--lengh-svg);
+                            width: var(--lengh-svg);
+                            
+                            &:hover {
+                                fill:rgb(124, 124, 255);
+                            }
+                        }
+                    }
+                }
+            }   
         }
 
+        h1 {
+            position: relative;
+            top: 15vh;
+            font-size: xx-large;
+        }
+    }
+
+    section.myCompetences {
         
+        div.content {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
