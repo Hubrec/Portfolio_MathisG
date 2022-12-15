@@ -1,16 +1,8 @@
 @use "../abstracts" as *;
 
-* {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font-family: inherit;
-	box-sizing: border-box;
-}
-
 ol, ul {
 	list-style: none;
+	padding: 0;
 }
 
 a, button {
@@ -34,6 +26,9 @@ html {
 		--primary-2: hsl(0deg, 0%, 85%);
 		--primary-3: hsl(286, 50%, 29%);
 		--black: hsl(0, 0%, 1%);
+
+		--download: hsl(50, 88%, 44%);
+		--download-hover: hsl(50, 77%, 56%);
 
 		--secondary-1: hsl(181, 77%, 24%);
 		--secondary-2: hsl(354, 92%, 35%);
@@ -61,6 +56,10 @@ html {
 		a {
 			color: var(--primary-2);
 		}
+
+		p {
+			font-family: $font-text;
+		}
 	}
 
 	/* Styles pour les navigateurs Chrome et Safari */
@@ -77,5 +76,14 @@ html {
 				background: var(--primary-3);
 			}
 		}
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }

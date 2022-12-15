@@ -1,15 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital@0;1&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font-family: inherit;
-  box-sizing: border-box;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@300;500&display=swap");
 ol, ul {
   list-style: none;
+  padding: 0;
 }
 
 a, button {
@@ -33,6 +26,8 @@ html body {
   --primary-2: hsl(0deg, 0%, 85%);
   --primary-3: hsl(286, 50%, 29%);
   --black: hsl(0, 0%, 1%);
+  --download: hsl(50, 88%, 44%);
+  --download-hover: hsl(50, 77%, 56%);
   --secondary-1: hsl(181, 77%, 24%);
   --secondary-2: hsl(354, 92%, 35%);
   --secondary-3: hsl(113, 93%, 30%);
@@ -54,6 +49,9 @@ html body main {
 html body a {
   color: var(--primary-2);
 }
+html body p {
+  font-family: "Exo", serif;
+}
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   html body::-webkit-scrollbar {
     width: 5px;
@@ -65,6 +63,14 @@ html body a {
   }
 }
 
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 section.sectGears {
   transition: opacity 1.3s ease-in-out;
 }
@@ -99,7 +105,7 @@ section.hiddenPages section div.content {
   display: flex;
   height: 100%;
   width: 100%;
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 section.hiddenPages section h1 {
   font-size: x-large;
@@ -134,7 +140,10 @@ section.hiddenPages section.page4 div.separator {
 section.hiddenPages section ul.nav {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   height: 20px;
+  padding: 0;
 }
 section.hiddenPages section ul.nav li.grow {
   margin: 7px 11px 7px 11px;
@@ -212,7 +221,101 @@ section.hiddenPages section.myContacts h1 {
 section.hiddenPages section.myCompetences div.content {
   flex-direction: column;
   align-items: center;
+  padding-top: 20px;
+}
+section.hiddenPages section.myCompetences div.content ul {
+  display: flex;
+  flex-direction: row;
+  justify-self: flex-end;
+  margin: 0 2vw 0 2vw;
+}
+section.hiddenPages section.myCompetences div.content ul li {
+  --space-btwn: calc(1vw + 10px);
+  color: var(--primary-2);
+  font-size: x-large;
+  margin: 0 var(--space-btwn) 0 var(--space-btwn);
+  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
+  cursor: pointer;
+}
+section.hiddenPages section.myCompetences div.content ul li.selected {
+  animation: fade 0.3s ease-in-out;
+  font-weight: bold;
+  opacity: 1;
+}
+section.hiddenPages section.myCompetences div.content section {
+  margin-top: 30px;
+  visibility: visible;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+}
+section.hiddenPages section.myCompetences div.content section.about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+section.hiddenPages section.myCompetences div.content section.about span {
+  position: relative;
+  bottom: 13vh;
+}
+section.hiddenPages section.myCompetences div.content section.about span p {
+  color: var(--primary-2);
+  font-size: large;
+  text-align: justify;
+}
+section.hiddenPages section.myCompetences div.content section.about img {
+  height: 20vw;
+  width: 20vw;
+  padding: 20px 2vw 20px 2vw;
+  margin-left: 6vw;
+  opacity: 0.9;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  bottom: 10vh;
+}
+section.hiddenPages section.myCompetences div.content section.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+section.hiddenPages section.myCompetences div.content section.cv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+}
+section.hiddenPages section.myCompetences div.content section.cv img.imgCv {
+  height: 40vw;
+  padding: 20px 2vw 20px 2vw;
+  margin: 50px 0 50px 0;
+}
+section.hiddenPages section.myCompetences div.content section.cv div.download {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw 3vw 1vw 3vw;
+  background-color: var(--download);
+  border-radius: 5px;
+  border: 8px ridge var(--download);
+  transition: all 0.3s ease-in-out;
+}
+section.hiddenPages section.myCompetences div.content section.cv div.download:hover {
+  background-color: var(--download-hover);
+  border: 8px ridge var(--download-hover);
+}
+section.hiddenPages section.myCompetences div.content section.cv div.download img {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+section.hiddenPages section.myCompetences div.content section.cv div.download p {
+  font-size: large;
+  color: var(--primary-2);
 }
 
 /*# sourceMappingURL=indexHidden.css.map */

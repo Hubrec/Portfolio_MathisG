@@ -1,15 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital@0;1&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font-family: inherit;
-  box-sizing: border-box;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@300;500&display=swap");
 ol, ul {
   list-style: none;
+  padding: 0;
 }
 
 a, button {
@@ -33,6 +26,8 @@ html body {
   --primary-2: hsl(0deg, 0%, 85%);
   --primary-3: hsl(286, 50%, 29%);
   --black: hsl(0, 0%, 1%);
+  --download: hsl(50, 88%, 44%);
+  --download-hover: hsl(50, 100%, 76%);
   --secondary-1: hsl(181, 77%, 24%);
   --secondary-2: hsl(354, 92%, 35%);
   --secondary-3: hsl(113, 93%, 30%);
@@ -54,6 +49,9 @@ html body main {
 html body a {
   color: var(--primary-2);
 }
+html body p {
+  font-family: "Exo", serif;
+}
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   html body::-webkit-scrollbar {
     width: 5px;
@@ -65,6 +63,14 @@ html body a {
   }
 }
 
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 header {
   display: flex;
   flex-direction: row;
@@ -164,14 +170,6 @@ header .menu-deroulant ul.show {
   visibility: visible;
 }
 
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @media screen and (max-width: 768px) {
   header h1 {
     font-size: x-large;
