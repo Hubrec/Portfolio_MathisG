@@ -107,6 +107,14 @@ section.hiddenPages {
         }
     }
 
+    // section spotify
+
+    // section.spotifyAlpha {
+    //     div.content {
+            
+    //     }
+    // }
+
     // section contact
 
     section.myContacts {
@@ -259,24 +267,48 @@ section.hiddenPages {
                         position: relative;
                         bottom: 10vh;
                     }
-
-                    
                 }
 
                 &.skills {
                     display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
+                    flex-direction: row;
+                    width: 40vw;
+                    margin-bottom: 40px;
+                    flex-wrap: wrap;
 
+                    img {
+
+                        &.small {
+                            scale: 2;
+                        }
+
+                        &.medium {
+                            scale: 1.5;
+                        }
+
+                        &.huge {
+                            scale: 0.06365;
+                        }
+                    }
+
+                    img.autre {
+                        height: calc(25px + .5vw);
+                        width: auto;
+                        margin: 5px;
+                        transition: all .3s ease-in-out;
+
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                    }                    
                 }
 
                 &.cv {
                     display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
                     align-items: center;
-                    justify-content: center;
-                    overflow-y: scroll;
+                    position: relative;
+                    top: 5vw;
 
                     img.imgCv {
                         height: 40vw;
@@ -284,20 +316,18 @@ section.hiddenPages {
                         margin: 50px 0 50px 0;
                     }   
 
-                    div.download {
+                    button.download {
                         display: flex;
                         flex-direction: row;
                         justify-content: center;
                         align-items: center;
-                        padding: 1vw 3vw 1vw 3vw;
+                        padding: 5px 1vw 5px 1vw;
                         background-color: var(--download);
                         border-radius: 5px;
-                        border: 8px ridge var(--download);
                         transition: all .3s ease-in-out;
 
                         &:hover {
                             background-color: var(--download-hover);
-                            border: 8px ridge var(--download-hover);
                         }
 
                         img {

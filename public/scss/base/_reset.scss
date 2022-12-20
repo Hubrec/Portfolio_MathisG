@@ -13,6 +13,10 @@ a, button {
 	cursor: pointer;
 }
 
+h2 {
+	color: var(--primary-2);
+}
+
 html {
 	min-width: 350px;
 	font-family: $font-sans;
@@ -27,8 +31,8 @@ html {
 		--primary-3: hsl(286, 50%, 29%);
 		--black: hsl(0, 0%, 1%);
 
-		--download: hsl(50, 88%, 44%);
-		--download-hover: hsl(50, 77%, 56%);
+		--download: hsl(44, 87%, 42%);
+		--download-hover: hsl(41, 100%, 46%);
 
 		--secondary-1: hsl(181, 77%, 24%);
 		--secondary-2: hsl(354, 92%, 35%);
