@@ -1,16 +1,19 @@
 <?php
     session_start();
-
+    print("<!-- ");
     $id_session = session_id();
+
+    print("Session id : ".$id_session." <br>");
 
     $expired = false;
     if (array_key_exists("expires",$_SESSION)) {
             if ($_SESSION["expires"]<time()) {
                     $expired = true;
+                    print("Session expired <br>");
             }
     }
     
-    if (!array_key_exists("spotify_token",$_SESSION) || $expired) {
+    //if (!array_key_exists("spotify_token",$_SESSION) || $expired) {
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "https://accounts.spotify.com/api/token");
             curl_setopt($ch, CURLOPT_POST, true);
@@ -18,10 +21,11 @@
                 'Authorization: Basic YmU5YzY0ODIzOWM5NDA1ZThlOWM0YTAyNWYzNDM4Y2I6MmJlYmE2YWE0OTBkNDU1MjhhYTViNTk3MjE5ODc0Mzk=',
             ];
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, "grant_type=client_credentials");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, "grant_type=authorization_code&code=AQARTgT8-btZXFDpHWO9oYDK62esCZ8kXZveKOCjaRRmzQqGW6dbGoethV8lLJ4XNgbiD7FKDymzbFoqshoY7ZCl9qb9ARk9fGw9ksSaxdTP5beuFb9ftiGYXRFL79b8NzvYf6VWP4D9qdrjNk0DIvIWyxDydYGRO912YP_AdpQpw_tckCw790ChLlH5mwbSJojeayLKsPAU7N0b6-5qGNThShlhGryXSBRhyWwbvT84SZVi&redirect_uri=http%3A%2F%2Fmathis-guerin.great-site.net%2F");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             $output = curl_exec($ch);
             curl_close($ch);
+            print("Output ".$output." <br>");
             $data = json_decode($output,true);
             $token = $data['access_token'];
             $expires = $data["expires_in"];
@@ -29,22 +33,29 @@
             $end = $now + $expires;
             $_SESSION["spotify_token"] = $token;
             $_SESSION["expires"] = $end;
-    }
-    else {
-            $token = $_SESSION["spotify_token"];
-    }
+    //}
+    //else {
+    //        $token = $_SESSION["spotify_token"];
+    //}
+    print("Token value ".$token." <br>");
 
+    // AQDYHso8eZF4kJsi1cQK6tYp73GSrJpFdzl58BMOEfEXepz1Mzdv6snfnEDndcS_Y0Ls3Idlg186TGQfkPlMPkYuGAtbRxF56X7F-Y2PtlElPtwzEZt4FKiOq1-jGcir7NioumcP56T7TNxVF8gD0wKpicSRf_2jHhbcBRVa62Jg9M8kGCm56tPpjNSP4C0wHK3QUGQTiZeVtSTLh-siae1D7QhAWVBMAAuZLaFe
+    //$code = "AQARTgT8-btZXFDpHWO9oYDK62esCZ8kXZveKOCjaRRmzQqGW6dbGoethV8lLJ4XNgbiD7FKDymzbFoqshoY7ZCl9qb9ARk9fGw9ksSaxdTP5beuFb9ftiGYXRFL79b8NzvYf6VWP4D9qdrjNk0DIvIWyxDydYGRO912YP_AdpQpw_tckCw790ChLlH5mwbSJojeayLKsPAU7N0b6-5qGNThShlhGryXSBRhyWwbvT84SZVi";
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://api.spotify.com/v1/me/top/tracks");                                      
+    curl_setopt($ch, CURLOPT_URL, "https://api.spotify.com/v1/me/top/tracks");
     $headers = [
         "Authorization: Bearer ".$_SESSION["spotify_token"],
     ];
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $output = curl_exec($ch);
+    print("Output : ".$output." <br>");
     curl_close($ch);
 
     $data = json_decode($output);
+   
+    print_r($data);
+    print(" -->");
 ?>
 
 <!DOCTYPE html>
@@ -92,9 +103,6 @@
 				</li>
 				<li>
 					<a href="https://open.spotify.com/user/91ln68mwno9yew0utduvt2gz3?si=caa44c0e7c60490f" title="lein vers mon compte spotify">My Spotify</a>
-				</li>
-				<li>
-					<a href="#">Other</a>
 				</li>
 			</ul>
         </div>
@@ -214,7 +222,6 @@
                     <ul>
                         <li class="selected">About me</li>
                         <li>My skills</li>
-                        <li>My experiences</li>
                         <li>My CV</li>
                     </ul>
 
@@ -233,59 +240,43 @@
                     </section>
 
                     <section class="skills">
-                        <div class="center">
-                            
-                        </div>
                         <div class="languages">
-                        <div>
-                            <img class="small" src="public/ressources/languages.svg" alt="svg language">
-                            <div class="languages">
-                                <img class="autre" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&amp;style=for-the-badge&amp;logo=html5&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&amp;style=for-the-badge&amp;logo=css3&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/Sass-%23CC6699.svg?&amp;style=for-the-badge&amp;logo=sass&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/python%20-%2314354C.svg?&amp;style=for-the-badge&amp;logo=python&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/language c%20-%2300599C.svg?&amp;style=for-the-badge&amp;logo=c&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/php-%23777BB4.svg?&amp;style=for-the-badge&amp;logo=php&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/java-%23ED8B00.svg?&amp;style=for-the-badge&amp;logo=java&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/c%2B%2B-%2300599C.svg?&amp;style=for-the-badge&amp;logo=c%2B%2B&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/c%23-%23239120.svg?&amp;style=for-the-badge&amp;logo=c-sharp&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/React-%2320232a.svg?&amp;style=for-the-badge&amp;logo=react&amp;logoColor=%2361DAFB">
-                                <img class="autre" src="https://img.shields.io/badge/Markdown-%23000000.svg?&amp;style=for-the-badge&amp;logo=markdown&amp;logoColor=white">
-                            </div>
-
-                            <img class="medium" src="public/ressources/logiciels.svg" alt="svg software">
-                            <div class="softwares">
-                                <img class="autre" src="https://img.shields.io/badge/XAMPP%20-%23ED8B00.svg?&amp;style=for-the-badge&amp;logo=XAMPP&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/Wireshark-%231572B6.svg?&amp;style=for-the-badge&amp;logo=Wireshark&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/Visual%20Studio%20Code-%23007ACC.svg?&amp;style=for-the-badge&amp;logo=visual-studio-code&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/Visual%20Studio-%235C2D91.svg?&amp;style=for-the-badge&amp;logo=visual-studio&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/MySQL-%2300f.svg?&amp;style=for-the-badge&amp;logo=mysql&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/Discord-%237289DA.svg?&amp;style=for-the-badge&amp;logo=discord&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/PHPMyAdmin-%2300f.svg?&amp;style=for-the-badge&amp;logo=phpmyadmin&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/GIMP-%2300f.svg?&amp;style=for-the-badge&amp;logo=gimp&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/Eclipse%20IDE-%23007ACC.svg?&amp;style=for-the-badge&amp;logo=eclipse-ide&amp;logoColor=white">
-                            </div>
-
-                            <img class="huge" src="public/ressources/environnement.svg" alt="svg environnement">
-                            <div class="environnement">
-                                <img class="autre" src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&amp;logo=linux&amp;logoColor=black">
-                                <img class="autre" src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&amp;logo=ubuntu&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/Arduino-%2300f.svg?&amp;style=for-the-badge&amp;logo=arduino&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/Raspberry%20Pi-C51A4A?style=for-the-badge&amp;logo=Raspberry-Pi">
-                                <img class="autre" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&amp;logo=windows&amp;logoColor=white">
-                            </div>
-                            
-                            <img class="small" src="public/ressources/repository.svg" alt="svg repository">
-                            <div class="repositories">
-                                <img class="autre" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&amp;logo=git&amp;logoColor=white">
-                                <img class="autre" src="https://img.shields.io/badge/GitLab-FCA121?style=for-the-badge&amp;logo=gitlab">
-                                <img class="autre" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&amp;logo=github&amp;logoColor=white">
-                            </div>
+                            <a href="https://fr.wikipedia.org/wiki/HTML5"><img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&amp;style=for-the-badge&amp;logo=html5&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade"><img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&amp;style=for-the-badge&amp;logo=css3&amp;logoColor=white"></a>
+                            <a href="https://sass-lang.com/"><img src="https://img.shields.io/badge/Sass-%23CC6699.svg?&amp;style=for-the-badge&amp;logo=sass&amp;logoColor=white"></a>
+                            <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python%20-%2314354C.svg?&amp;style=for-the-badge&amp;logo=python&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/C_(langage)"><img src="https://img.shields.io/badge/language c%20-%2300599C.svg?&amp;style=for-the-badge&amp;logo=c&amp;logoColor=white"></a>
+                            <a href="https://www.php.net/manual/fr/intro-whatis.php"><img src="https://img.shields.io/badge/php-%23777BB4.svg?&amp;style=for-the-badge&amp;logo=php&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/Java_(langage)"><img src="https://img.shields.io/badge/java-%23ED8B00.svg?&amp;style=for-the-badge&amp;logo=java&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/C%2B%2B#:~:text=C%2B%2B%20est%20un%20langage,objet%20et%20la%20programmation%20g%C3%A9n%C3%A9rique."><img src="https://img.shields.io/badge/c%2B%2B-%2300599C.svg?&amp;style=for-the-badge&amp;logo=c%2B%2B&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/Markdown"><img class="dark" src="https://img.shields.io/badge/Markdown-%23000000.svg?&amp;style=for-the-badge&amp;logo=markdown&amp;logoColor=white"></a>
                         </div>
-                    </section>
 
-                    <section class="experiences">
+                        <div class="softwares">
+                            <a href="https://fr.wikipedia.org/wiki/XAMPP"><img src="https://img.shields.io/badge/XAMPP%20-%23ED8B00.svg?&amp;style=for-the-badge&amp;logo=XAMPP&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/Wireshark"><img src="https://img.shields.io/badge/Wireshark-%231572B6.svg?&amp;style=for-the-badge&amp;logo=Wireshark&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/Visual_Studio_Code"><img src="https://img.shields.io/badge/Visual%20Studio%20Code-%23007ACC.svg?&amp;style=for-the-badge&amp;logo=visual-studio-code&amp;logoColor=white"></a>
+                            <a href="https://visualstudio.microsoft.com/fr/"><img src="https://img.shields.io/badge/Visual%20Studio-%235C2D91.svg?&amp;style=for-the-badge&amp;logo=visual-studio&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/MySQL"><img src="https://img.shields.io/badge/MySQL-%2300f.svg?&amp;style=for-the-badge&amp;logo=mysql&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/Discord_(logiciel)"><img src="https://img.shields.io/badge/Discord-%237289DA.svg?&amp;style=for-the-badge&amp;logo=discord&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/PhpMyAdmin"><img src="https://img.shields.io/badge/PHPMyAdmin-%2300f.svg?&amp;style=for-the-badge&amp;logo=phpmyadmin&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/GIMP"><img src="https://img.shields.io/badge/GIMP-%2300f.svg?&amp;style=for-the-badge&amp;logo=gimp&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/Eclipse_(projet)"><img src="https://img.shields.io/badge/Eclipse%20IDE-%23007ACC.svg?&amp;style=for-the-badge&amp;logo=eclipse-ide&amp;logoColor=white"></a>
+                        </div>
 
+                        <div class="environnement">
+                            <a href="https://fr.wikipedia.org/wiki/Linux"></a><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&amp;logo=linux&amp;logoColor=black"></a>
+                            <a href="https://fr.wikipedia.org/wiki/Ubuntu_(syst%C3%A8me_d%27exploitation)"></a><img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&amp;logo=ubuntu&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/Arduino"></a><img src="https://img.shields.io/badge/Arduino-%2300f.svg?&amp;style=for-the-badge&amp;logo=arduino&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/Raspberry_Pi"></a><img src="https://img.shields.io/badge/Raspberry%20Pi-C51A4A?style=for-the-badge&amp;logo=Raspberry-Pi"></a>
+                            <a href="https://fr.wikipedia.org/wiki/Microsoft_Windows"></a><img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&amp;logo=windows&amp;logoColor=white"></a>
+                        </div>
+                        
+                        <div class="repositories">
+                            <a href="https://fr.wikipedia.org/wiki/Git"><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&amp;logo=git&amp;logoColor=white"></a>
+                            <a href="https://fr.wikipedia.org/wiki/GitLab"><img src="https://img.shields.io/badge/GitLab-FCA121?style=for-the-badge&amp;logo=gitlab"></a>
+                            <a href="https://fr.wikipedia.org/wiki/GitHub"><img class="dark" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&amp;logo=github&amp;logoColor=white"></a>
+                        </div>
                     </section>
 
                     <section class="cv">
@@ -324,7 +315,7 @@
                 <h1>My spotify page</h1>
 
                 <div class="content">
-                    <h2><?= $_SESSION["spotify_token"] ?></h2>
+
                 </div>
 
             </section>

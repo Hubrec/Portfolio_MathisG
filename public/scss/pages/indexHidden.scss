@@ -107,14 +107,6 @@ section.hiddenPages {
         }
     }
 
-    // section spotify
-
-    // section.spotifyAlpha {
-    //     div.content {
-            
-    //     }
-    // }
-
     // section contact
 
     section.myContacts {
@@ -270,32 +262,52 @@ section.hiddenPages {
                 }
 
                 &.skills {
-                    display: flex;
-                    flex-direction: row;
-                    width: 40vw;
-                    margin-bottom: 40px;
-                    flex-wrap: wrap;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-gap: 10px;
+                    grid-template-rows: minmax(2, 1fr);
+                    width: 90%;
+                    height: 70%;
 
-                    img {
+                    div {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 1vh;
 
-                        &.small {
-                            scale: 2;
+                        &.languages {
+                            grid-column: 1;
+                            grid-row: 1;
                         }
 
-                        &.medium {
-                            scale: 1.5;
+                        &.softwares {
+                            grid-column: 2;
+                            grid-row: 2;
                         }
 
-                        &.huge {
-                            scale: 0.06365;
+                        &.environnement {
+                            grid-column: 2;
+                            grid-row: 1;
+                        }
+
+                        &.repositories {
+                            grid-column: 1;
+                            grid-row: 2;
                         }
                     }
 
-                    img.autre {
+                    img {
                         height: calc(25px + .5vw);
                         width: auto;
-                        margin: 5px;
+                        margin: 7px;
                         transition: all .3s ease-in-out;
+                        border-radius: 5px;
+
+                        &.dark {
+                            border: 2px solid grey;
+                        }
 
                         &:hover {
                             transform: scale(1.05);
@@ -327,7 +339,7 @@ section.hiddenPages {
                         transition: all .3s ease-in-out;
 
                         &:hover {
-                            background-color: var(--download-hover);
+                            scale: 1.01;
                         }
 
                         img {
