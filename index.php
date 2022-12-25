@@ -260,7 +260,6 @@
                             <a href="https://fr.wikipedia.org/wiki/MySQL"><img src="https://img.shields.io/badge/MySQL-%2300f.svg?&amp;style=for-the-badge&amp;logo=mysql&amp;logoColor=white"></a>
                             <a href="https://fr.wikipedia.org/wiki/Discord_(logiciel)"><img src="https://img.shields.io/badge/Discord-%237289DA.svg?&amp;style=for-the-badge&amp;logo=discord&amp;logoColor=white"></a>
                             <a href="https://fr.wikipedia.org/wiki/PhpMyAdmin"><img src="https://img.shields.io/badge/PHPMyAdmin-%2300f.svg?&amp;style=for-the-badge&amp;logo=phpmyadmin&amp;logoColor=white"></a>
-                            <a href="https://fr.wikipedia.org/wiki/GIMP"><img src="https://img.shields.io/badge/GIMP-%2300f.svg?&amp;style=for-the-badge&amp;logo=gimp&amp;logoColor=white"></a>
                             <a href="https://fr.wikipedia.org/wiki/Eclipse_(projet)"><img src="https://img.shields.io/badge/Eclipse%20IDE-%23007ACC.svg?&amp;style=for-the-badge&amp;logo=eclipse-ide&amp;logoColor=white"></a>
                         </div>
 
