@@ -71,7 +71,7 @@
     <script src="./public/js/pages.js" defer></script>
     <script src="./public/js/backgrounds.js" defer></script>
     <script src="./public/js/competences.js" defer></script>
-    <script src="./public/js/spotify.js" defer></script>
+    <script src="./public/js/scrollerProjects.js" defer></script>
 
 
     <link rel="stylesheet" href="./public/css/pages/index.css">
@@ -295,11 +295,21 @@
                 </ul>
                 
                 <div class="separator"></div>
-
-                <h1>My personals and school projects</h1>
+               
+                <div class="settingsProjects">
+                    <h1>All my personals and school projects</h1>
+                    <div class="rewind"></div>
+                </div>
 
                 <div class="content">
-
+                    <div class="space"></div>
+                    <div class="project1 pr"></div>
+                    <div class="project2 pr"></div>
+                    <div class="project3 pr"></div>
+                    <div class="project4 pr"></div>
+                    <div class="project5 pr"></div>
+                    <div class="project6 pr"></div>
+                    <div class="space"></div>
                 </div>
 
             </section>
