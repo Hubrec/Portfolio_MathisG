@@ -115,28 +115,27 @@ section.hiddenPages section h1 {
   font-size: x-large;
   color: var(--primary-2);
   pointer-events: none;
-  padding-top: 3vh;
 }
 section.hiddenPages section.page1 div.separator {
-  margin-top: 4vh;
+  margin: 4vh 0 3vh 0;
   padding: 3px 30% 3px 30%;
   background-color: var(--secondary-1);
   border-radius: 10px;
 }
 section.hiddenPages section.page2 div.separator {
-  margin-top: 4vh;
+  margin: 4vh 0 3vh 0;
   padding: 3px 30% 3px 30%;
   background-color: var(--secondary-2);
   border-radius: 10px;
 }
 section.hiddenPages section.page3 div.separator {
-  margin-top: 4vh;
+  margin: 4vh 0 3vh 0;
   padding: 3px 30% 3px 30%;
   background-color: var(--secondary-3);
   border-radius: 10px;
 }
 section.hiddenPages section.page4 div.separator {
-  margin-top: 4vh;
+  margin: 4vh 0 3vh 0;
   padding: 3px 30% 3px 30%;
   background-color: var(--secondary-4);
   border-radius: 10px;
@@ -154,6 +153,7 @@ section.hiddenPages section ul.nav li.grow {
   padding: 11px;
   border-radius: 100%;
   background-color: green;
+  transition: all 0.15s ease-in-out;
 }
 section.hiddenPages section ul.nav li.grow:hover {
   box-shadow: 0 0 8px green, inset 0 0 8px green, 0 0 16px #2eff27, inset 0 0 16px #1aff12, 0 0 32px #5eff59, inset 0 0 32px #43f33d;
@@ -163,6 +163,7 @@ section.hiddenPages section ul.nav li.closer {
   padding: 11px;
   border-radius: 100%;
   background-color: red;
+  transition: all 0.15s ease-in-out;
 }
 section.hiddenPages section ul.nav li.closer:hover {
   box-shadow: 0 0 8px rgb(255, 77, 77), inset 0 0 8px rgb(255, 90, 90), 0 0 16px #ff4848, inset 0 0 16px #ff6d6d, 0 0 32px #ff1d1d, inset 0 0 32px #ff1010;
@@ -358,30 +359,35 @@ section.hiddenPages section.myCompetences div.content section.cv button.download
   font-size: large;
   color: var(--primary-2);
 }
-section.hiddenPages section.myProjects div.settingsProjects {
-  display: flex;
-  flex-direction: row;
-}
-section.hiddenPages section.myProjects div.settingsProjects div.rewind {
-  position: relative;
-  top: 6.5vh;
-  left: 4vw;
-  height: 22px;
-  width: 22px;
+section.hiddenPages section.myProjects li.rewind {
+  height: 0px;
+  width: 0px;
   border-radius: 50%;
-  background-color: red;
+  background-color: rgb(255, 183, 0);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: fade 0.3s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
-section.hiddenPages section.myProjects div.settingsProjects div.rewind.visible {
+section.hiddenPages section.myProjects li.rewind.visible {
+  height: 22px;
+  width: 22px;
   visibility: visible;
   opacity: 1;
   pointer-events: all;
 }
-section.hiddenPages section.myProjects div.settingsProjects div.rewind:hover {
-  box-shadow: 0 0 8px rgb(255, 77, 77), inset 0 0 8px rgb(255, 90, 90), 0 0 16px #ff4848, inset 0 0 16px #ff6d6d, 0 0 32px #ff1d1d, inset 0 0 32px #ff1010;
+section.hiddenPages section.myProjects li.rewind:hover {
+  box-shadow: 0 0 8px rgb(255, 193, 77), inset 0 0 8px rgb(255, 211, 90), 0 0 16px #ffe048, inset 0 0 16px #ffdf6d, 0 0 32px #ffc71d, inset 0 0 32px #ffc710;
+}
+section.hiddenPages section.myProjects h1.title {
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+}
+section.hiddenPages section.myProjects h1.title.hide {
+  position: inherit;
+  opacity: 0;
+  visibility: hidden;
 }
 section.hiddenPages section.myProjects div.content {
   justify-content: center;
@@ -395,9 +401,13 @@ section.hiddenPages section.myProjects div.content div {
   width: calc(100% / var(--nbrOfProjects));
   border-radius: 15px;
   margin: 0 calc(var(--space) / 2) 0 calc(var(--space) / 2);
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease-in-out, fade 0.4s ease-in, height 0.4s ease-in-out, width 0.4s ease-in-out;
   z-index: 4;
   position: relative;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.97;
 }
 section.hiddenPages section.myProjects div.content div.project1 {
   background-color: var(--project-2);
@@ -417,10 +427,40 @@ section.hiddenPages section.myProjects div.content div.project5 {
 section.hiddenPages section.myProjects div.content div.project6 {
   background-color: var(--project-1);
 }
+section.hiddenPages section.myProjects div.content div.project1 {
+  background-image: url(../../ressources/projects/logoMazzy.png);
+}
+section.hiddenPages section.myProjects div.content div.project2 {
+  background-image: url(../../ressources/projects/DirectoryAdministrator.svg);
+}
+section.hiddenPages section.myProjects div.content div.project3 {
+  background-image: url(../../ressources/projects/NameGen.png);
+}
+section.hiddenPages section.myProjects div.content div.project4 {
+  background-image: url(../../ressources/competences.svg);
+}
+section.hiddenPages section.myProjects div.content div.project5 {
+  background-image: url(../../ressources/projects/grama.svg);
+}
+section.hiddenPages section.myProjects div.content div.project6 {
+  background-image: url(../../ressources/projects/logoIut.png);
+}
 section.hiddenPages section.myProjects div.content div.hovered {
   transform: scale(1.25);
   width: 30%;
   z-index: 6;
+  background-size: cover;
+  background-size: 0;
+}
+section.hiddenPages section.myProjects div.content div.hovered h2 {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+}
+section.hiddenPages section.myProjects div.content div.hovered p {
+  transition: all 0.5s ease-in-out;
+  visibility: visible;
+  opacity: 1;
 }
 section.hiddenPages section.myProjects div.content div.side {
   transform: scale(1.12);
@@ -435,11 +475,33 @@ section.hiddenPages section.myProjects div.content div.selected {
   pointer-events: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  background-size: 0;
+}
+section.hiddenPages section.myProjects div.content div.selected h2 {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
 }
 section.hiddenPages section.myProjects div.content div.hide {
   display: none;
   opacity: 0;
   visibility: hidden;
+}
+section.hiddenPages section.myProjects div.content div h2 {
+  visibility: hidden;
+  opacity: 0;
+}
+section.hiddenPages section.myProjects div.content div p {
+  visibility: hidden;
+  opacity: 0;
+  padding: 0 30px 0 30px;
+  text-align: left;
+}
+section.hiddenPages section.spotifyAlpha div.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=indexHidden.css.map */

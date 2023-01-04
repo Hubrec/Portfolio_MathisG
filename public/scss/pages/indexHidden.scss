@@ -47,7 +47,6 @@ section.hiddenPages {
             font-size: x-large;
             color: var(--primary-2);
             pointer-events: none;
-            padding-top: 3vh;
         }
 
         @for $i from 1 through 4 {
@@ -55,7 +54,7 @@ section.hiddenPages {
             &.page#{$i} {
 
                 div.separator {
-                    margin-top: 4vh;
+                    margin: 4vh 0 3vh 0;
                     padding: 3px 30% 3px 30%;
                     background-color: var(--secondary-#{$i});
                     border-radius: 10px;
@@ -76,6 +75,7 @@ section.hiddenPages {
                 padding: 11px;
                 border-radius: 100%;
                 background-color: green;
+                transition: all .15s ease-in-out;
 
                 &:hover {
                     box-shadow:
@@ -93,6 +93,7 @@ section.hiddenPages {
                 padding: 11px;
                 border-radius: 100%;
                 background-color: red;
+                transition: all .15s ease-in-out;
 
                 &:hover {
                     box-shadow:
@@ -356,38 +357,44 @@ section.hiddenPages {
 
     section.myProjects {
         
-        div.settingsProjects {
-            display: flex;
-            flex-direction: row;
+        li.rewind {
+            height: 0px;
+            width: 0px;
+            border-radius: 50%;
+            background-color: rgb(255, 183, 0);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: all .15s ease-in-out;
 
-            div.rewind {
-                position: relative;
-                top: 6.5vh;
-                left: 4vw;
+            &.visible {
                 height: 22px;
                 width: 22px;
-                border-radius: 50%;
-                background-color: red;
+                visibility: visible;
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            &:hover {
+                box-shadow:
+                    0 0 8px rgb(255, 193, 77),
+                    inset 0 0 8px rgb(255, 211, 90),
+                    0 0 16px #ffe048,
+                    inset 0 0 16px #ffdf6d,
+                    0 0 32px #ffc71d,
+                    inset 0 0 32px #ffc710;
+            }
+        }
+
+        h1.title {
+            visibility: visible;
+            opacity: 1;
+            position: relative;
+
+            &.hide {
+                position: inherit;
                 opacity: 0;
                 visibility: hidden;
-                pointer-events: none;
-                transition: fade .3s ease-in-out;
-
-                &.visible {
-                    visibility: visible;
-                    opacity: 1;
-                    pointer-events: all;
-                }
-
-                &:hover {
-                    box-shadow:
-                        0 0 8px rgb(255, 77, 77),
-                        inset 0 0 8px rgb(255, 90, 90),
-                        0 0 16px #ff4848,
-                        inset 0 0 16px #ff6d6d,
-                        0 0 32px #ff1d1d,
-                        inset 0 0 32px #ff1010;
-                }
             }
         }
 
@@ -404,9 +411,13 @@ section.hiddenPages {
                 width: calc( 100% / var(--nbrOfProjects));
                 border-radius: 15px;
                 margin: 0 calc( var(--space) / 2) 0 calc( var(--space) / 2);
-                transition: all .4s ease;
+                transition: transform .4s ease-in-out, fade .4s ease-in, height .4s ease-in-out, width .4s ease-in-out;
                 z-index: 4;
                 position: relative;
+                background-size: 80%;
+                background-repeat: no-repeat;
+                background-position: center;
+                opacity: 0.97;
 
                 @for $k from 1 through 6 {
                     
@@ -421,10 +432,48 @@ section.hiddenPages {
                     }
                 }
 
+                &.project1 {
+                    background-image: url(../../ressources/projects/logoMazzy.png);
+                }
+
+                &.project2 {
+                    background-image: url(../../ressources/projects/DirectoryAdministrator.svg);
+                }
+
+                &.project3 {
+                    background-image: url(../../ressources/projects/NameGen.png);
+                }
+
+                &.project4 {
+                    background-image: url(../../ressources/competences.svg);
+                }
+
+                &.project5 {
+                    background-image: url(../../ressources/projects/grama.svg);
+                }
+
+                &.project6 {
+                    background-image: url(../../ressources/projects/logoIut.png);
+                }
+
                 &.hovered {
                     transform: scale(1.25);
                     width: 30%;
                     z-index: 6;
+                    background-size: cover;
+                    background-size: 0;
+
+                    h2 {
+                        visibility: visible;
+                        transition: all .5s ease-in-out;
+                        opacity: 1;
+                    }
+
+                    p {
+                        transition: all .5s ease-in-out;
+                        visibility: visible;
+                        opacity: 1;
+                    }
                 }
 
                 &.side {
@@ -442,6 +491,13 @@ section.hiddenPages {
                     pointer-events: none;
                     border-bottom-left-radius: 0;
                     border-bottom-right-radius: 0;
+                    background-size: 0;
+
+                    h2 {
+                        visibility: visible;
+                        transition: all .5s ease-in-out;
+                        opacity: 1;
+                    }
                 }
 
                 &.hide {
@@ -449,7 +505,29 @@ section.hiddenPages {
                     opacity: 0;
                     visibility: hidden;
                 }
+
+                h2 {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+
+                p {
+                    visibility: hidden;
+                    opacity: 0;
+                    padding: 0 30px 0 30px;
+                    text-align: left;
+                }
             }
+        }
+    }
+
+    section.spotifyAlpha {
+       
+        div.content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     }
 }

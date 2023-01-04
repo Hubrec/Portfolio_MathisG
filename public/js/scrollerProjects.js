@@ -1,6 +1,7 @@
 const section = document.querySelector('.myProjects');
 const projects = section.querySelectorAll('div.pr');
-const back = section.querySelector('div.rewind');
+const back = section.querySelector('li.rewind');
+const title = section.querySelector('h1.title');
 
 projects.forEach((project) => {
     project.addEventListener('mouseenter', () => {
@@ -29,6 +30,7 @@ projects.forEach((project) => {
         
         project.classList.add('selected');
         back.classList.add('visible');
+        title.classList.add('hide');
         
         projects.forEach((p) => {
             if (p !== project) {
@@ -43,6 +45,7 @@ back.addEventListener('click', () => {
         removeAll(p);
     });
     back.classList.remove('visible');
+    title.classList.remove('hide');
 });
 
 function sideClass(project) {
@@ -52,7 +55,6 @@ function sideClass(project) {
 
     for (let i = 0; i < projects.length; i++) {
         if (projects[i] === project) {
-            console.log("passage");
 
             if (i === 0) {
                 projects[i + 1].classList.add('side');

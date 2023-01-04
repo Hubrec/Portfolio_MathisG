@@ -231,7 +231,7 @@
                             <p>I am a computer science student at IUT Lyon 1 in the second year. I love discovering new things and I work out of passion.
                                 Above all, I like to code and develop in many different languages. </p>
                             <p>
-                                When I am involved in a project that interests me, it can happen that you no longer see myself for a whole week.</p>
+                                When I am involved in a project that interests me, it can happen that I no longer see myself for a whole week.</p>
                             </p>
                         </span>
                         <div class="img">
@@ -290,24 +290,41 @@
             <section class="myProjects page2">
                 <ul class="nav">
                     <li class="grow" title="grow the page"></li>
+                    <li class="rewind" title="reduce the project"></li>
                     <li class="closer" title="shrink the page"></li>
                 </ul>
                 
                 <div class="separator"></div>
                
-                <div class="settingsProjects">
-                    <h1>All my personals and school projects</h1>
-                    <div class="rewind"></div>
-                </div>
+                <h1 class="title">All my personals and school projects</h1>
 
+                
                 <div class="content">
                     <div class="space"></div>
-                    <div class="project1 pr"></div>
-                    <div class="project2 pr"></div>
-                    <div class="project3 pr"></div>
-                    <div class="project4 pr"></div>
-                    <div class="project5 pr"></div>
-                    <div class="project6 pr"></div>
+                    <div class="project1 pr">
+                        <h2>Project Mazzy</h2>
+                        <p>A Javascript game that implements maze generation</p>
+                    </div>
+                    <div class="project2 pr">
+                        <h2>Directory Administrator</h2>
+                        <p>A C project of my first year of IUT that manage a direcotry of clients</p>
+                    </div>
+                    <div class="project3 pr">
+                        <h2>Name Gen</h2>
+                        <p>A Java application that generate names using a basic neural network</p>
+                    </div>
+                    <div class="project4 pr">
+                        <h2>My website</h2>
+                        <p>A website that I made to present myself</p>
+                    </div>
+                    <div class="project5 pr">
+                        <h2>Graph Map Analysis</h2>
+                        <p>A Java project of my second year of IUT that manipulates graphs</p>
+                    </div>
+                    <div class="project6 pr">
+                        <h2>BUT Info Website</h2>
+                        <p>My first ever computer Science project, I've made it im my first year of IUT</p>
+                    </div>
                     <div class="space"></div>
                 </div>
 
@@ -324,7 +341,8 @@
                 <h1>My spotify page</h1>
 
                 <div class="content">
-
+                    <h2>Nothing here for the moment</h2>
+                    <h2>Work INFOgress...</h2>
                 </div>
 
             </section>
