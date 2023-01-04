@@ -408,7 +408,7 @@ section.hiddenPages {
                 z-index: 4;
                 position: relative;
 
-                @for $k from 1 through 10 {
+                @for $k from 1 through 6 {
             
                     &.project#{$k} {
                         background-color: var(--project-#{$k});

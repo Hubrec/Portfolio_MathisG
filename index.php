@@ -231,7 +231,7 @@
                             <p>I am a computer science student at IUT Lyon 1 in the second year. I love discovering new things and I work out of passion.
                                 Above all, I like to code and develop in many different languages. </p>
                             <p>
-                                When I am involved in a project that interests me, it can happen that I no longer see myself for a whole week.</p>
+                                When I am involved in a project that interests me, it can happen that you no longer see myself for a whole week.</p>
                             </p>
                         </span>
                         <div class="img">

@@ -49,6 +49,9 @@ html body {
   --project-8: hsl(42, 52%, 84%);
   --project-9: hsl(42, 34%, 15%);
   --project-10: hsl(207, 31%, 28%);
+  --project-11: hsl(0, 100%, 27%);
+  --project-12: hsl(46, 100%, 73%);
+  --project-13: hsl(295, 100%, 26%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
