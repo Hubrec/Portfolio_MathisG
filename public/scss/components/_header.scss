@@ -6,7 +6,7 @@ header {
     flex-direction: row;
     justify-content: center;
     visibility: visible;
-    background-color:  var(--black);
+    background-color:  var(--primary-3);
     transition: transform .8s ease-in-out;
 
     img.iconAccueil {
@@ -96,7 +96,7 @@ header {
             position: absolute;
             right: -30px;
             width: 250px;
-            background-color: var(--black);
+            background-color: var(--primary-3);
             border-radius: 2%;
             display: flex;
             flex-direction: column;

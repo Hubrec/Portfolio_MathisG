@@ -15,7 +15,7 @@ section.hiddenPages {
         z-index: 12;
         bottom: -90vh;
         left: 10vw;
-        background-color: var(--black);
+        background-color: var(--primary-3);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -152,7 +152,7 @@ section.hiddenPages {
                             top: 11px;
 
                             &:hover {
-                                fill: rgb(255, 117, 237);
+                                fill: rgb(237, 235, 97);
                             }
                         }
                     }
@@ -409,9 +409,15 @@ section.hiddenPages {
                 position: relative;
 
                 @for $k from 1 through 6 {
-            
-                    &.project#{$k} {
-                        background-color: var(--project-#{$k});
+                    
+                    @if $k % 2 == 0 {
+                        &.project#{$k} {
+                            background-color: var(--project-1);
+                        }
+                    } @else {
+                        &.project#{$k} {
+                            background-color: var(--project-2);
+                        }
                     }
                 }
 
