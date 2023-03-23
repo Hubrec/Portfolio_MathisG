@@ -88,9 +88,9 @@ section.hiddenPages section {
   bottom: -90vh;
   left: 10vw;
   background-color: var(--primary-3);
-  display: flex;
   flex-direction: column;
   align-items: center;
+  display: flex;
   border-radius: 11px;
   transition: all 0.7s ease-in-out;
 }
@@ -372,6 +372,7 @@ section.hiddenPages section.myProjects li.rewind {
 section.hiddenPages section.myProjects li.rewind.visible {
   height: 22px;
   width: 22px;
+  margin: 0 11px 0 11px;
   visibility: visible;
   opacity: 1;
   pointer-events: all;
@@ -388,26 +389,37 @@ section.hiddenPages section.myProjects h1.title.hide {
   position: inherit;
   opacity: 0;
   visibility: hidden;
+  transition: fade 0.4s ease-in-out;
 }
 section.hiddenPages section.myProjects div.content {
   justify-content: center;
-  align-items: center;
   padding: 0 30px 0 30px;
+  position: relative;
+  top: 3%;
+}
+section.hiddenPages section.myProjects div.content p {
+  color: var(--primary-1);
+  text-align: justify;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }
 section.hiddenPages section.myProjects div.content div {
   --space: 3px;
   --nbrOfProjects: 6;
-  height: 60%;
+  height: 50%;
   width: calc(100% / var(--nbrOfProjects));
   border-radius: 15px;
   margin: 0 calc(var(--space) / 2) 0 calc(var(--space) / 2);
-  transition: transform 0.4s ease-in-out, fade 0.4s ease-in, height 0.4s ease-in-out, width 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, fade 0.4s ease-in, height 0.4s ease-in-out, width 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
   z-index: 4;
   position: relative;
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.97;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 section.hiddenPages section.myProjects div.content div.project1 {
   background-color: var(--project-2);
@@ -445,12 +457,19 @@ section.hiddenPages section.myProjects div.content div.project5 {
 section.hiddenPages section.myProjects div.content div.project6 {
   background-image: url(../../ressources/projects/logoIut.png);
 }
+section.hiddenPages section.myProjects div.content div.project1, section.hiddenPages section.myProjects div.content div.project4 {
+  background-size: 45%;
+}
+section.hiddenPages section.myProjects div.content div.project2 {
+  background-size: 60%;
+}
 section.hiddenPages section.myProjects div.content div.hovered {
   transform: scale(1.25);
   width: 30%;
   z-index: 6;
   background-size: cover;
   background-size: 0;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.492), 0 20px 20px rgba(0, 0, 0, 0.629);
 }
 section.hiddenPages section.myProjects div.content div.hovered h2 {
   visibility: visible;
@@ -465,6 +484,7 @@ section.hiddenPages section.myProjects div.content div.hovered p {
 section.hiddenPages section.myProjects div.content div.side {
   transform: scale(1.12);
   z-index: 5;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.468), 0 10px 10px rgba(0, 0, 0, 0.534);
 }
 section.hiddenPages section.myProjects div.content div.space {
   width: 5%;
@@ -482,6 +502,68 @@ section.hiddenPages section.myProjects div.content div.selected h2 {
   transition: all 0.5s ease-in-out;
   opacity: 1;
 }
+section.hiddenPages section.myProjects div.content div.selected p {
+  transition: all 0.5s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+  margin: 0 0 20px 0;
+}
+section.hiddenPages section.myProjects div.content div.selected div.project-content {
+  display: grid;
+  height: 65%;
+  width: 90%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  opacity: 1;
+  visibility: visible;
+  grid-template-areas: "image desc" "image desc" "image desc" "para para" "para para";
+}
+section.hiddenPages section.myProjects div.content div.selected div.project-content div.image-container {
+  grid-area: image;
+  height: 100%;
+  width: 100%;
+}
+section.hiddenPages section.myProjects div.content div.selected div.project-content div.description-project {
+  grid-area: desc;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+section.hiddenPages section.myProjects div.content div.selected div.project-content div.para-container {
+  height: 100%;
+  width: 100%;
+  grid-area: para;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+section.hiddenPages section.myProjects div.content div.selected div.project-content div.para-container a {
+  background-color: var(--download);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  padding: 10px 20px 10px 20px;
+  font-weight: bold;
+  margin: 0 10px 0 10px;
+}
+section.hiddenPages section.myProjects div.content div.selected div.project-content div.para-container a:hover {
+  scale: 1.01;
+}
+section.hiddenPages section.myProjects div.content div.selected div.project-content div.para-container a img {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+section.hiddenPages section.myProjects div.content div.selected div.project-content div.para-container a p {
+  font-size: large;
+  color: var(--primary-2);
+}
 section.hiddenPages section.myProjects div.content div.hide {
   display: none;
   opacity: 0;
@@ -496,6 +578,11 @@ section.hiddenPages section.myProjects div.content div p {
   opacity: 0;
   padding: 0 30px 0 30px;
   text-align: left;
+}
+section.hiddenPages section.myProjects div.content div div.project-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: fade 0.4s ease-in-out;
 }
 section.hiddenPages section.spotifyAlpha div.content {
   display: flex;

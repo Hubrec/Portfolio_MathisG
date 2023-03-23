@@ -301,29 +301,132 @@
                 
                 <div class="content">
                     <div class="space"></div>
-                    <div class="project1 pr">
+                    <div class="project1 pr" title="click me">
                         <h2>Project Mazzy</h2>
                         <p>A Javascript game that implements maze generation</p>
+                        <div class="project-content p1">
+                            <div class="image-container">
+                                <img src="" alt="">
+                            </div>
+                            <div class="description-project">
+
+                            </div>
+                            <div class="para-container">
+                                <a href="https://mazzy-project.netlify.app/">
+                                    <button class="source-code">
+                                        <img src="./public/ressources/dl-rocket.svg" alt="image lien externe">
+                                        <p>Try it now</p>
+                                    </button>
+                                </a>
+                                <a href="https://github.com/Hubrec/projet-mazzy">
+                                    <button class="source-code">
+                                        <img src="./public/ressources/github.svg" alt="image github logo">
+                                        <p>Github repository</p>
+                                    </button>
+                                </a>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project2 pr">
+                    <div class="project2 pr" title="click me">
                         <h2>Directory Administrator</h2>
                         <p>A C project of my first year of IUT that manage a direcotry of clients</p>
+                        <div class="project-content p2">
+                            <div class="image-container">
+
+                            </div>
+                            <div class="description-project">
+
+                            </div>
+                            <div class="para-container">
+                                <button class="visit">
+
+                                </button>
+                                <button class="source-code">
+                                    
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project3 pr">
+                    <div class="project3 pr" title="click me">
                         <h2>Name Gen</h2>
                         <p>A Java application that generate names using a basic neural network</p>
+                        <div class="project-content p3">
+                            <div class="image-container">
+
+                            </div>
+                            <div class="description-project">
+
+                            </div>
+                            <div class="para-container">
+                                <button class="visit">
+
+                                </button>
+                                <button class="source-code">
+                                    
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project4 pr">
+                    <div class="project4 pr" title="click me">
                         <h2>My website</h2>
                         <p>A website that I made to present myself</p>
+                        <div class="project-content p4">
+                            <div class="image-container">
+
+                            </div>
+                            <div class="description-project">
+
+                            </div>
+                            <div class="para-container">
+                                <button class="visit">
+
+                                </button>
+                                <button class="source-code">
+                                    
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project5 pr">
+                    <div class="project5 pr" title="click me">
                         <h2>Graph Map Analysis</h2>
                         <p>A Java project of my second year of IUT that manipulates graphs</p>
+                        <div class="project-content p5">
+                            <div class="image-container">
+
+                            </div>
+                            <div class="description-project">
+
+                            </div>
+                            <div class="para-container">
+                                <button class="visit">
+
+                                </button>
+                                <button class="source-code">
+                                    
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project6 pr">
+                    <div class="project6 pr" title="click me">
                         <h2>BUT Info Website</h2>
                         <p>My first ever computer Science project, I've made it im my first year of IUT</p>
+                        <div class="project-content p6">
+                            <div class="image-container">
+
+                            </div>
+                            <div class="description-project">
+
+                            </div>
+                            <div class="para-container">
+                                <button class="visit">
+
+                                </button>
+                                <button class="source-code">
+
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="space"></div>
                 </div>
