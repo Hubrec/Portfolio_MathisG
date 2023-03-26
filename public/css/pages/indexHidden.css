@@ -29,7 +29,7 @@ html body {
   --primary-1: hsl(0, 0%, 8%);
   --primary-2: rgb(205, 205, 205);
   --primary-3: hsl(0, 0%, 3%);
-  --download: hsl(41, 100%, 46%);
+  --download: hsl(44, 100%, 59%);
   --secondary-1: #213796;
   --secondary-2: #d00e32;
   --secondary-3: #19b435;
@@ -110,7 +110,7 @@ section.hiddenPages section div.content {
   display: flex;
   height: 100%;
   width: 100%;
-  margin-top: 2vh;
+  margin-top: 10px;
 }
 section.hiddenPages section h1 {
   font-size: x-large;
@@ -341,11 +341,8 @@ section.hiddenPages section.myCompetences div.content section.cv button.download
   align-items: center;
   padding: 5px 1vw 5px 1vw;
   background-color: var(--download);
+  border: none;
   border-radius: 5px;
-  transition: all 0.3s ease-in-out;
-}
-section.hiddenPages section.myCompetences div.content section.cv button.download:hover {
-  scale: 1.01;
 }
 section.hiddenPages section.myCompetences div.content section.cv button.download img {
   height: 40px;
@@ -354,13 +351,11 @@ section.hiddenPages section.myCompetences div.content section.cv button.download
 }
 section.hiddenPages section.myCompetences div.content section.cv button.download p {
   font-size: large;
-  color: var(--primary-2);
+  color: var(--primary-1);
 }
 section.hiddenPages section.myProjects > div.scroll {
   overflow-y: scroll;
   overflow-x: hidden;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 section.hiddenPages section.myProjects.selected > div.scroll {
   overflow: hidden;
@@ -394,6 +389,7 @@ section.hiddenPages section.myProjects h1.title {
   position: relative;
   transition: fade 0.4s ease-in-out;
   display: block;
+  margin-bottom: 30px;
 }
 section.hiddenPages section.myProjects h1.title.hide {
   position: inherit;
@@ -488,10 +484,12 @@ section.hiddenPages section.myProjects div.content div.side {
 section.hiddenPages section.myProjects div.content div.space {
   width: 5%;
 }
+section.hiddenPages section.myProjects div.content div.space.hide {
+  display: none;
+}
 section.hiddenPages section.myProjects div.content div.selected {
   width: 100%;
   height: 100%;
-  pointer-events: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   background-size: 0;
@@ -502,6 +500,10 @@ section.hiddenPages section.myProjects div.content div.selected h2 {
   transition: all 0.5s ease-in-out;
   opacity: 1;
 }
+section.hiddenPages section.myProjects div.content div.selected h3 {
+  text-align: left;
+  margin-left: 30px;
+}
 section.hiddenPages section.myProjects div.content div.selected p {
   transition: all 0.5s ease-in-out;
   visibility: visible;
@@ -509,60 +511,61 @@ section.hiddenPages section.myProjects div.content div.selected p {
   margin: 0 0 20px 0;
 }
 section.hiddenPages section.myProjects div.content div.selected div.project-content {
-  display: grid;
-  height: 65%;
-  width: 90%;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(5, 1fr);
   opacity: 1;
   visibility: visible;
-  grid-template-areas: "image desc" "image desc" "image desc" "para para" "para para";
-}
-section.hiddenPages section.myProjects div.content div.selected div.project-content div.image-container {
-  grid-area: image;
+  display: flex;
+  flex-direction: row;
   height: 100%;
   width: 100%;
+  align-items: start;
+  justify-content: center;
 }
-section.hiddenPages section.myProjects div.content div.selected div.project-content div.description-project {
-  grid-area: desc;
-  height: 100%;
-  width: 100%;
+section.hiddenPages section.myProjects div.content div.selected div.project-content img.proj {
+  max-height: 60%;
+  max-width: 60%;
+  border-radius: 6px;
+  margin: 10px;
+}
+section.hiddenPages section.myProjects div.content div.selected div.project-content article h3 {
+  line-height: 0.5;
+}
+section.hiddenPages section.myProjects div.content div.selected div.project-content article p {
+  line-height: 1.2;
+}
+section.hiddenPages section.myProjects div.content div.selected div.project-content div.content-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
+  width: 60%;
+  position: relative;
+  top: 110px;
 }
-section.hiddenPages section.myProjects div.content div.selected div.project-content div.para-container {
-  height: 100%;
-  width: 100%;
-  grid-area: para;
+section.hiddenPages section.myProjects div.content div.selected div.project-content div.content-right div.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+section.hiddenPages section.myProjects div.content div.selected div.project-content div.content-right div.links button {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-section.hiddenPages section.myProjects div.content div.selected div.project-content div.para-container a {
   background-color: var(--download);
+  border: none;
   border-radius: 5px;
-  transition: all 0.3s ease-in-out;
-  padding: 10px 20px 10px 20px;
-  font-weight: bold;
-  margin: 0 10px 0 10px;
+  width: 190px;
+  margin: 20px;
+  padding: 10px;
 }
-section.hiddenPages section.myProjects div.content div.selected div.project-content div.para-container a:hover {
-  scale: 1.01;
+section.hiddenPages section.myProjects div.content div.selected div.project-content div.content-right div.links button img {
+  height: 30px;
+  width: 30px;
 }
-section.hiddenPages section.myProjects div.content div.selected div.project-content div.para-container a img {
-  height: 40px;
-  width: 40px;
-  margin-right: 10px;
-}
-section.hiddenPages section.myProjects div.content div.selected div.project-content div.para-container a p {
+section.hiddenPages section.myProjects div.content div.selected div.project-content div.content-right div.links button p {
   font-size: large;
-  color: var(--primary-2);
+  color: var(--primary-1);
+  margin: 0;
 }
 section.hiddenPages section.myProjects div.content div.hide {
   display: none;
@@ -583,6 +586,7 @@ section.hiddenPages section.myProjects div.content div div.project-content {
   opacity: 0;
   visibility: hidden;
   transition: fade 0.4s ease-in-out;
+  display: none;
 }
 section.hiddenPages section.myProjects div.content-pointed.invisible, section.hiddenPages section.myProjects div.content-garbage.invisible {
   display: none;
@@ -596,7 +600,7 @@ section.hiddenPages section.myProjects div.all-projects {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
   width: 100%;
 }
 section.hiddenPages section.myProjects div.all-projects div {
@@ -692,7 +696,6 @@ section.hiddenPages section.myProjects div.all-projects div.space {
 section.hiddenPages section.myProjects div.all-projects div.selected {
   width: 100%;
   height: 100%;
-  pointer-events: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   background-size: 0;
@@ -703,11 +706,72 @@ section.hiddenPages section.myProjects div.all-projects div.selected h2 {
   transition: all 0.5s ease-in-out;
   opacity: 1;
 }
+section.hiddenPages section.myProjects div.all-projects div.selected h3 {
+  text-align: left;
+  margin-left: 30px;
+}
 section.hiddenPages section.myProjects div.all-projects div.selected p {
   transition: all 0.5s ease-in-out;
   visibility: visible;
   opacity: 1;
   margin: 0 0 20px 0;
+}
+section.hiddenPages section.myProjects div.all-projects div.selected div.project-content {
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  align-items: start;
+  justify-content: center;
+}
+section.hiddenPages section.myProjects div.all-projects div.selected div.project-content img.proj {
+  max-height: 60%;
+  max-width: 60%;
+  border-radius: 6px;
+  margin: 10px;
+}
+section.hiddenPages section.myProjects div.all-projects div.selected div.project-content article h3 {
+  line-height: 0.5;
+}
+section.hiddenPages section.myProjects div.all-projects div.selected div.project-content article p {
+  line-height: 1.2;
+}
+section.hiddenPages section.myProjects div.all-projects div.selected div.project-content div.content-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  position: relative;
+  top: 110px;
+}
+section.hiddenPages section.myProjects div.all-projects div.selected div.project-content div.content-right div.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+section.hiddenPages section.myProjects div.all-projects div.selected div.project-content div.content-right div.links button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--download);
+  border: none;
+  border-radius: 5px;
+  width: 190px;
+  margin: 20px;
+  padding: 10px;
+}
+section.hiddenPages section.myProjects div.all-projects div.selected div.project-content div.content-right div.links button img {
+  height: 30px;
+  width: 30px;
+}
+section.hiddenPages section.myProjects div.all-projects div.selected div.project-content div.content-right div.links button p {
+  font-size: large;
+  color: var(--primary-1);
+  margin: 0;
 }
 section.hiddenPages section.myProjects div.all-projects div.hide {
   display: none;
@@ -734,6 +798,7 @@ section.hiddenPages section.spotifyAlpha div.content {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 /*# sourceMappingURL=indexHidden.css.map */

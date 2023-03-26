@@ -4,25 +4,30 @@ const back = section.querySelector('li.rewind');
 const title = section.querySelectorAll('h1.title');
 const divPointed = section.querySelector('div.content-pointed');
 const divGarbage = section.querySelector('div.content-garbage');
+const space = section.querySelectorAll('div.space');
 
 console.log(divPointed);
 
 projects.forEach((project) => {
     project.addEventListener('mouseenter', () => {
-        projects.forEach((p) => {
-            p.classList.remove('hovered');
-        });
-        project.classList.add('hovered');
-        sideClass(project);
-        othersClass(project);
+        if (!project.classList.contains('selected')) {
+            projects.forEach((p) => {
+                p.classList.remove('hovered');
+            });
+            project.classList.add('hovered');
+            sideClass(project);
+            othersClass(project);
+        }
     });
 
     project.addEventListener('mouseleave', () => {
-        project.classList.remove('hovered');
-        projects.forEach((p) => {
-            p.classList.remove('side');
-            p.classList.remove('others');
-        });
+        if (!project.classList.contains('selected')) {
+            project.classList.remove('hovered');
+            projects.forEach((p) => {
+                p.classList.remove('side');
+                p.classList.remove('others');
+            });
+        }
     });
 });
 
@@ -51,6 +56,8 @@ projects.forEach((project) => {
         back.classList.add('visible');
         title[0].classList.add('hide');
         title[1].classList.add('hide');
+        space[0].classList.add('hide');
+        space[1].classList.add('hide');
         
         projects.forEach((p) => {
             if (p !== project) {
@@ -71,6 +78,8 @@ back.addEventListener('click', () => {
     back.classList.remove('visible');
     title[0].classList.remove('hide');
     title[1].classList.remove('hide');
+    space[0].classList.remove('hide');
+    space[1].classList.remove('hide');
     section.classList.remove('selected');
 });
 

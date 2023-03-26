@@ -305,28 +305,92 @@
                             <h2>Project Mazzy</h2>
                             <p>A Javascript game that implements maze generation</p>
                             <div class="project-content p1">
-                                
+
+                                <img class="proj" src="public\ressources\projects\design\mazzy-screen.png" alt="mazzy screen">
+
+                                <div class="content-right">
+                                    <article>
+                                        <h3>What is it ?</h3>
+                                        <p>Project Mazzy is a game that I made in my first year of IUT. It is a maze game where you have to find the exit of the maze. The maze is generated randomly and the difficulty is increasing as you increase the size of the maze.</p>
+                                        <h3>What did I learn ?</h3>
+                                        <p>During this project I learned how to use the canvas element in javascript and how to use the canvas API. I also learned how to use the DOM API to create and manipulate elements.</p>
+                                        <h3>What did I use ?</h3>
+                                        <p>For this project I used HTML, CSS and Javascript.</p>
+                                    </article>
+                                    <div class="links">
+                                        <a href="http://mazzy.mathisguerin.fr"><button class="play"><img src="public\ressources\play.svg" alt="play logo"><p>Play</p></button></a>
+                                        <a href="https://github.com/Hubrec/projet-mazzy"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="project2 pr">
                             <h2>My Blop</h2>
                             <p>A symphony project made in class in my second year of IUT, this is a blog so go check it yourself :)</p>
-                            <div class="project-content p4">
-                                
+                            <div class="project-content p2">
+
+                                <img class="proj" src="public\ressources\projects\design\myblop-screen.png" alt="My blop screen">
+
+                                <div class="content-right">
+                                    <article>
+                                        <h3>What is it ?</h3>
+                                        <p>My Blop is a blog that I made in my second year of IUT. It is a blog where you can read, create, delete and update articles. There is also admin functionalities that allow to manage all the website.</p>
+                                        <h3>What did I learn ?</h3>
+                                        <p>During this project I learned how to use the symphony framework and how to use the doctrine ORM. I also learned how to use the twig template engine and how to use the bootstrap framework.</p>
+                                        <h3>What did I use ?</h3>
+                                        <p>For this project I used bootstrap, symfony, PHP and Twig.</p>
+                                    </article>
+                                    <div class="links">
+                                        <a href="http://myblop.mathisguerin.fr"><button class="website"><img src="public\ressources\play.svg" alt="play logo"><p>Website</p></button></a>
+                                        <a href="https://github.com/Hubrec/My_blop"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="project3 pr">
                             <h2>Velovify</h2>
                             <p>An andoroid app that fetch velov data and display it in a compact and usefull app</p>
-                            <div class="project-content p4">
-                                
+                            <div class="project-content p3">
+
+                                <img class="proj" src="public\ressources\projects\design\velovify-screen2.png" alt="Velovify screen">
+                                <img class="proj" src="public\ressources\projects\design\velovify-screen3.png" alt="Velovify screen">
+
+                                <div class="content-right">
+                                    <article>
+                                        <h3>What is it ?</h3>
+                                        <p>Velovify is an android app that I made in my second year of IUT. It is an app that fetch data from the velov API and display it in a compact and usefull way.</p>
+                                        <h3>What did I learn ?</h3>
+                                        <p>During this project I learned how to use the android studio IDE and how to use the android API. I also learned how to use the retrofit library to fetch data from an API.</p>
+                                        <h3>What did I use ?</h3>
+                                        <p>For this project I used android studio, kotlin, retrofit and the velov API.</p>
+                                    </article>
+                                    <div class="links">
+                                        <a href="https://github.com/Hubrec/Velovify"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="project4 pr">
                             <h2>My website</h2>
                             <p>A website that I made to present myself</p>
                             <div class="project-content p4">
-                                
+
+                                <img class="proj" src="public\ressources\projects\design\website-screen.png" alt="My website screen">
+
+                                <div class="content-right">
+                                    <article>
+                                        <h3>What is it ?</h3>
+                                        <p>My website is a website that I made in my second year of IUT. It is a website that I made to present myself and my projects.</p>
+                                        <h3>What did I learn ?</h3>
+                                        <p>During this project I learned to use scss a lot and also how to highlight my skills and my projects.</p>
+                                        <h3>What did I use ?</h3>
+                                        <p>For this project PHP, scss and Javascript.</p>
+                                    </article>
+                                    <div class="links">
+                                        <a href="http://portfolio.mathisguerin.fr"><button class="website"><img src="public\ressources\play.svg" alt="play logo"><p>Website</p></button></a>
+                                        <a href="https://github.com/Hubrec/Portfolio_MathisG"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="space"></div>
@@ -341,42 +405,74 @@
                             <div class="project5 pr">
                                 <h2>Graph Map Analysis</h2>
                                 <p>A Java project of my first year of IUT that manipulates graphs</p>
-                                <div class="project-content p4">
+                                <div class="project-content p5">
+
+                                    <img class="proj" src="public\ressources\projects\design\grama-screen.png" alt="My website screen">
                                     
+                                    <div class="content-right">
+                                        <article>
+                                            <h3>What is it ?</h3>
+                                            <p>Graph Map Analysis is a Java project that I made in my first year of IUT. It is a project that manipulates graphs and that allows to find the shortest path between two points.</p>
+                                            <h3>What did I learn ?</h3>
+                                            <p>During this project I learned how to use the Java language and how to manipulate graphs.</p>
+                                            <h3>What did I use ?</h3>
+                                            <p>For this project I used Java and swing for the visuals.</p>
+                                        </article>
+                                        <div class="links">
+                                            <a href="https://github.com/Hubrec/SAEGraphMapAnalysis"><button class="install"><img src="public\ressources\play.svg" alt="play logo"><p>Install</p></button></a>
+                                            <a href="https://github.com/Hubrec/SAEGraphMapAnalysis"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="project6 pr">
                                 <h2>BUT Info Website</h2>
                                 <p>My first ever computer Science project, I've made it im my first year of IUT</p>
-                                <div class="project-content p4">
+                                <div class="project-content p5">
+
+                                    <img class="proj" src="public\ressources\projects\design\grama-screen.png" alt="My website screen">
                                     
+                                    <div class="content-right">
+                                        <article>
+                                            <h3>What is it ?</h3>
+                                            <p>Graph Map Analysis is a Java project that I made in my first year of IUT. It is a project that manipulates graphs and that allows to find the shortest path between two points.</p>
+                                            <h3>What did I learn ?</h3>
+                                            <p>During this project I learned how to use the Java language and how to manipulate graphs.</p>
+                                            <h3>What did I use ?</h3>
+                                            <p>For this project I used Java and swing for the visuals.</p>
+                                        </article>
+                                        <div class="links">
+                                            <a href="https://github.com/Hubrec/SAEGraphMapAnalysis"><button class="install"><img src="public\ressources\play.svg" alt="play logo"><p>Install</p></button></a>
+                                            <a href="https://github.com/Hubrec/SAEGraphMapAnalysis"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="project7 pr">
                                 <h2>Directory Administrator</h2>
                                 <p>A C project of my first year of IUT that manage a direcotry of clients</p>
-                                <div class="project-content p2">
+                                <div class="project-content p7">
                                     
                                 </div>
                             </div>
                             <div class="project8 pr">
                                 <h2>Name Gen</h2>
                                 <p>A Java application that generate names using a basic neural network</p>
-                                <div class="project-content p3">
+                                <div class="project-content p8">
                                     
                                 </div>
                             </div>
                             <div class="project9 pr">
                                 <h2>Bot-V-Love</h2>
                                 <p>A python bot for discord that fetch velov data and implements some functions for the user to see the velov traffic</p>
-                                <div class="project-content p4">
+                                <div class="project-content p9">
                                     
                                 </div>
                             </div>
                             <div class="project10 pr">
                                 <h2>Sell & Buy</h2>
                                 <p>A php project of my second year of IUT, it is a big marketplace to buys and sell everything you want !</p>
-                                <div class="project-content p4">
+                                <div class="project-content p10">
                                     
                                 </div>
                             </div>

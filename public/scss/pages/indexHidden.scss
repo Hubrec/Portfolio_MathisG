@@ -40,7 +40,7 @@ section.hiddenPages {
             display: flex;
             height: 100%;
             width: 100%;
-            margin-top: 2vh;
+            margin-top: 10px;
         }
 
         h1 {
@@ -331,12 +331,8 @@ section.hiddenPages {
                         align-items: center;
                         padding: 5px 1vw 5px 1vw;
                         background-color: var(--download);
+                        border: none;
                         border-radius: 5px;
-                        transition: all .3s ease-in-out;
-
-                        &:hover {
-                            scale: 1.01;
-                        }
 
                         img {
                             height: 40px;
@@ -346,7 +342,7 @@ section.hiddenPages {
 
                         p {
                             font-size: large;
-                            color: var(--primary-2);
+                            color: var(--primary-1);
                         }
                     }
                 }
@@ -354,12 +350,11 @@ section.hiddenPages {
         }
     }
 
-    section.myProjects {            
+    section.myProjects {
+
         > div.scroll {
             overflow-y: scroll;
             overflow-x: hidden;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
         }
 
         &.selected {
@@ -406,6 +401,7 @@ section.hiddenPages {
             position: relative;
             transition: fade .4s ease-in-out;
             display: block;
+            margin-bottom: 30px;
 
             &.hide {
                 position: inherit;
@@ -514,12 +510,15 @@ section.hiddenPages {
 
                 &.space {
                     width: 5%;
+
+                    &.hide {
+                        display: none;
+                    }
                 }
 
                 &.selected {
                     width: 100%;
                     height: 100%;
-                    pointer-events: none;
                     border-bottom-left-radius: 0;
                     border-bottom-right-radius: 0;
                     background-size: 0;
@@ -531,78 +530,82 @@ section.hiddenPages {
                         opacity: 1;
                     }
 
+                    h3 {
+                        text-align: left;
+                        margin-left: 30px;
+                    }
+
                     p {
                         transition: all .5s ease-in-out;
                         visibility: visible;
                         opacity: 1;
                         margin : 0 0 20px 0;
                     }
-
+                    
                     div.project-content {
-                        display: grid;
-                        height: 65%;
-                        width: 90%;
-                        grid-template-columns: repeat(2, 1fr);
-                        grid-template-rows: repeat(5, 1fr);
                         opacity: 1;
                         visibility: visible;
-                        grid-template-areas: 
-                            "image desc"
-                            "image desc"
-                            "image desc"
-                            "para para"
-                            "para para";
-                        
-                        div.image-container {
-                            grid-area: image;
-                            height: 100%;
-                            width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        height: 100%;
+                        width: 100%;
+                        align-items: start;
+                        justify-content: center;
+
+                        img.proj {
+                            max-height: 60%;
+                            max-width: 60%;
+                            border-radius: 6px;
+                            margin: 10px;
                         }
-    
-                        div.description-project {
-                            grid-area: desc;
-                            height: 100%;
-                            width: 100%;
+
+                        article {
+
+                            h3 {
+                                line-height: .5;
+                            }
+
+                            p {
+                                line-height: 1.2;
+                            }
+                        }
+
+                        div.content-right {
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
                             align-items: center;
-                            text-align: center;
-                            margin: 0 0 0 0;
-                            padding: 0 0 0 0;
-    
-                        }
-    
-                        div.para-container {
-                            height: 100%;
-                            width: 100%;
-                            grid-area: para;
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: center;
-                            align-items: center;
-                            
-                            a {
-                                background-color: var(--download);
-                                border-radius: 5px;
-                                transition: all .3s ease-in-out;
-                                padding: 10px 20px 10px 20px;
-                                font-weight: bold;
-                                margin: 0 10px 0 10px;
-    
-                                &:hover {
-                                    scale: 1.01;
-                                }
-    
-                                img {
-                                    height: 40px;
-                                    width: 40px;
-                                    margin-right: 10px;
-                                }
-    
-                                p {
-                                    font-size: large;
-                                    color: var(--primary-2);
+                            width: 60%;
+                            position: relative;
+                            top: 110px;
+
+                            div.links {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-around;
+
+                                button {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-color: var(--download);
+                                    border: none;
+                                    border-radius: 5px;
+                                    width: 190px;
+                                    margin: 20px;
+                                    padding: 10px;
+
+                                    img {
+                                        height: 30px;
+                                        width: 30px;
+                                    }
+            
+                                    p {
+                                        font-size: large;
+                                        color: var(--primary-1);
+                                        margin: 0;
+                                    }
                                 }
                             }
                         }
@@ -631,6 +634,7 @@ section.hiddenPages {
                     opacity: 0;
                     visibility: hidden;
                     transition: fade .4s ease-in-out;
+                    display: none;
                 }
             }
         }
@@ -652,7 +656,7 @@ section.hiddenPages {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 30px;
+            margin-top: 20px;
             width: 100%;
 
             div {
@@ -758,7 +762,6 @@ section.hiddenPages {
                 &.selected {
                     width: 100%;
                     height: 100%;
-                    pointer-events: none;
                     border-bottom-left-radius: 0;
                     border-bottom-right-radius: 0;
                     background-size: 0;
@@ -770,11 +773,85 @@ section.hiddenPages {
                         opacity: 1;
                     }
 
+                    h3 {
+                        text-align: left;
+                        margin-left: 30px;
+                    }
+
                     p {
                         transition: all .5s ease-in-out;
                         visibility: visible;
                         opacity: 1;
                         margin : 0 0 20px 0;
+                    }
+                    
+                    div.project-content {
+                        opacity: 1;
+                        visibility: visible;
+                        display: flex;
+                        flex-direction: row;
+                        height: 100%;
+                        width: 100%;
+                        align-items: start;
+                        justify-content: center;
+
+                        img.proj {
+                            max-height: 60%;
+                            max-width: 60%;
+                            border-radius: 6px;
+                            margin: 10px;
+                        }
+
+                        article {
+
+                            h3 {
+                                line-height: .5;
+                            }
+
+                            p {
+                                line-height: 1.2;
+                            }
+                        }
+
+                        div.content-right {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            width: 60%;
+                            position: relative;
+                            top: 110px;
+
+                            div.links {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-around;
+
+                                button {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-color: var(--download);
+                                    border: none;
+                                    border-radius: 5px;
+                                    width: 190px;
+                                    margin: 20px;
+                                    padding: 10px;
+
+                                    img {
+                                        height: 30px;
+                                        width: 30px;
+                                    }
+            
+                                    p {
+                                        font-size: large;
+                                        color: var(--primary-1);
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -812,6 +889,7 @@ section.hiddenPages {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            display: none;
         }
     }
 }
