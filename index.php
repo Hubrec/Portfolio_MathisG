@@ -88,7 +88,7 @@
 
         <h1>Mathis Guerin's Portfolio</h1>
 
-        <div class="menu-deroulant" title="esc pour fermer">
+        <div class="menu-deroulant">
             <svg width="50" height="50" version="1.1" xmlns="http://www.w3.org/2000/svg" class="btn-drop">
                 <rect x="5" y="5" rx="10" ry="10" width="40" height="8" fill="black" stroke-width="3" class="one"/>
                 <rect x="5" y="20" rx="10" ry="10" width="40" height="8" fill="black" stroke-width="3" class="two"/>
@@ -96,20 +96,20 @@
             </svg>
             <ul class="menu-deroulant-content">
 				<li>
-					<a href="https://github.com/Hubrec" title="lien vers mon profile github">My Github</a>
+					<a href="https://github.com/Hubrec">My Github</a>
 				</li>
 				<li>
-                    <a href="mailto:mathisjp.guerin@gmail.com?body=Bonjour%20Mathis,%0A%0A" title="lien pour m'envoyer un mail">Contact Me</a>
+                    <a href="mailto:mathisjp.guerin@gmail.com?body=Bonjour%20Mathis,%0A%0A">Contact Me</a>
 				</li>
 				<li>
-					<a href="https://open.spotify.com/user/91ln68mwno9yew0utduvt2gz3?si=caa44c0e7c60490f" title="lein vers mon compte spotify">My Spotify</a>
+					<a href="https://open.spotify.com/user/91ln68mwno9yew0utduvt2gz3?si=caa44c0e7c60490f">My Spotify</a>
 				</li>
 			</ul>
         </div>
 
     </header>
         <section class="sectGears">
-            <div class="divgears" title="click me">
+            <div class="divgears">
                 <svg class="gear-1 gear" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460.01 460.01">
                     <path d="M230,37.6C123.74,37.6,37.6,123.74,37.6,230S123.74,422.41,230,422.41,422.41,336.27,422.41,230,336.27,37.6,230,37.6Zm0,336.12A143.72,143.72,0,1,1,373.72,230,143.72,143.72,0,0,1,230,373.72Z" transform="translate(0 0)"/>
                     <polygon points="154.94 76.95 213.97 60.29 181.47 4.17 153.3 12.12 154.94 76.95"/>
@@ -133,7 +133,7 @@
                 <h1 class="titleGear1">My Skills</h1>
             </div>
 
-            <div class="divgears" title="click me">
+            <div class="divgears">
                 <svg class="gear-2 gear" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460.01 460.01">
                     <path d="M230,37.6C123.74,37.6,37.6,123.74,37.6,230S123.74,422.41,230,422.41,422.41,336.27,422.41,230,336.27,37.6,230,37.6Zm0,336.12A143.72,143.72,0,1,1,373.72,230,143.72,143.72,0,0,1,230,373.72Z" transform="translate(0 0)"/>
                     <polygon points="154.94 76.95 213.97 60.29 181.47 4.17 153.3 12.12 154.94 76.95"/>
@@ -157,7 +157,7 @@
                 <h1 class="titleGear2">My Projects</h1>
             </div>
 
-            <div class="divgears" title="click me">
+            <div class="divgears">
                 <svg class="gear-3 gear" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460.01 460.01">
                     <path d="M230,37.6C123.74,37.6,37.6,123.74,37.6,230S123.74,422.41,230,422.41,422.41,336.27,422.41,230,336.27,37.6,230,37.6Zm0,336.12A143.72,143.72,0,1,1,373.72,230,143.72,143.72,0,0,1,230,373.72Z" transform="translate(0 0)"/>
                     <polygon points="154.94 76.95 213.97 60.29 181.47 4.17 153.3 12.12 154.94 76.95"/>
@@ -181,7 +181,7 @@
                 <h1 class="titleGear3">Spotify me</h1>
             </div>
 
-            <div class="divgears" title="click me">
+            <div class="divgears">
                 <svg class="gear-4 gear" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460.01 460.01">
                     <path d="M230,37.6C123.74,37.6,37.6,123.74,37.6,230S123.74,422.41,230,422.41,422.41,336.27,422.41,230,336.27,37.6,230,37.6Zm0,336.12A143.72,143.72,0,1,1,373.72,230,143.72,143.72,0,0,1,230,373.72Z" transform="translate(0 0)"/>
                     <polygon points="154.94 76.95 213.97 60.29 181.47 4.17 153.3 12.12 154.94 76.95"/>
@@ -211,8 +211,8 @@
 
             <section class="myCompetences page1">
                 <ul class="nav">
-                    <li class="grow" title="grow the page"></li>
-                    <li class="closer" title="shrink the page"></li>
+                    <li class="grow"></li>
+                    <li class="closer"></li>
                 </ul>
                 
                 <div class="separator"></div>
@@ -289,154 +289,98 @@
 
             <section class="myProjects page2">
                 <ul class="nav">
-                    <li class="grow" title="grow the page"></li>
-                    <li class="rewind" title="reduce the project"></li>
-                    <li class="closer" title="shrink the page"></li>
+                    <li class="grow"></li>
+                    <li class="rewind"></li>
+                    <li class="closer"></li>
                 </ul>
                 
                 <div class="separator"></div>
                
-                <h1 class="title">All my personals and school projects</h1>
-
+                <h1 class="title">My best school and personal projects</h1>
                 
-                <div class="content">
+                <div class="content content-pointed">
                     <div class="space"></div>
-                    <div class="project1 pr" title="click me">
+                    <div class="project1 pr">
                         <h2>Project Mazzy</h2>
                         <p>A Javascript game that implements maze generation</p>
                         <div class="project-content p1">
-                            <div class="image-container">
-                                <img src="" alt="">
-                            </div>
-                            <div class="description-project">
-
-                            </div>
-                            <div class="para-container">
-                                <a href="https://mazzy-project.netlify.app/">
-                                    <button class="source-code">
-                                        <img src="./public/ressources/dl-rocket.svg" alt="image lien externe">
-                                        <p>Try it now</p>
-                                    </button>
-                                </a>
-                                <a href="https://github.com/Hubrec/projet-mazzy">
-                                    <button class="source-code">
-                                        <img src="./public/ressources/github.svg" alt="image github logo">
-                                        <p>Github repository</p>
-                                    </button>
-                                </a>
-                                </button>
-                            </div>
+                            
                         </div>
                     </div>
-                    <div class="project2 pr" title="click me">
-                        <h2>Directory Administrator</h2>
-                        <p>A C project of my first year of IUT that manage a direcotry of clients</p>
-                        <div class="project-content p2">
-                            <div class="image-container">
-
-                            </div>
-                            <div class="description-project">
-
-                            </div>
-                            <div class="para-container">
-                                <button class="visit">
-
-                                </button>
-                                <button class="source-code">
-                                    
-                                </button>
-                            </div>
+                    <div class="project2 pr">
+                        <h2>My Blop</h2>
+                        <p>A symphony project made in class in my second year of IUT, this is a blog so go check it yourself :)</p>
+                        <div class="project-content p4">
+                            
                         </div>
                     </div>
-                    <div class="project3 pr" title="click me">
-                        <h2>Name Gen</h2>
-                        <p>A Java application that generate names using a basic neural network</p>
-                        <div class="project-content p3">
-                            <div class="image-container">
-
-                            </div>
-                            <div class="description-project">
-
-                            </div>
-                            <div class="para-container">
-                                <button class="visit">
-
-                                </button>
-                                <button class="source-code">
-                                    
-                                </button>
-                            </div>
+                    <div class="project3 pr">
+                        <h2>Velovify</h2>
+                        <p>An andoroid app that fetch velov data and display it in a compact and usefull app</p>
+                        <div class="project-content p4">
+                            
                         </div>
                     </div>
-                    <div class="project4 pr" title="click me">
+                    <div class="project4 pr">
                         <h2>My website</h2>
                         <p>A website that I made to present myself</p>
                         <div class="project-content p4">
-                            <div class="image-container">
-
-                            </div>
-                            <div class="description-project">
-
-                            </div>
-                            <div class="para-container">
-                                <button class="visit">
-
-                                </button>
-                                <button class="source-code">
-                                    
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project5 pr" title="click me">
-                        <h2>Graph Map Analysis</h2>
-                        <p>A Java project of my second year of IUT that manipulates graphs</p>
-                        <div class="project-content p5">
-                            <div class="image-container">
-
-                            </div>
-                            <div class="description-project">
-
-                            </div>
-                            <div class="para-container">
-                                <button class="visit">
-
-                                </button>
-                                <button class="source-code">
-                                    
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project6 pr" title="click me">
-                        <h2>BUT Info Website</h2>
-                        <p>My first ever computer Science project, I've made it im my first year of IUT</p>
-                        <div class="project-content p6">
-                            <div class="image-container">
-
-                            </div>
-                            <div class="description-project">
-
-                            </div>
-                            <div class="para-container">
-                                <button class="visit">
-
-                                </button>
-                                <button class="source-code">
-
-                                </button>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="space"></div>
+                </div>
+
+                <h1 class="title">All my projects</h1>
+
+                <div class="content-garbage">
+
+                    <div class="all-projects">
+
+                        <div class="project5 pr">
+                            <h2>Graph Map Analysis</h2>
+                            <p>A Java project of my second year of IUT that manipulates graphs</p>
+                            <div class="project-content p4">
+                                
+                            </div>
+                        </div>
+                        <div class="project6 pr">
+                            <h2>BUT Info Website</h2>
+                            <p>My first ever computer Science project, I've made it im my first year of IUT</p>
+                            <div class="project-content p4">
+                                
+                            </div>
+                        </div>
+                        <div class="project7 pr">
+                            <h2>Directory Administrator</h2>
+                            <p>A C project of my first year of IUT that manage a direcotry of clients</p>
+                            <div class="project-content p2">
+                                
+                            </div>
+                        </div>
+                        <div class="project8 pr">
+                            <h2>Name Gen</h2>
+                            <p>A Java application that generate names using a basic neural network</p>
+                            <div class="project-content p3">
+                                
+                            </div>
+                        </div>
+                        <div class="project9 pr">
+                            <h2>Bot-V-Love</h2>
+                            <p>A python bot for discord that fetch velov data and implements some functions for the user to see the velov traffic</p>
+                            <div class="project-content p4">
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </section>
 
             <section class="spotifyAlpha page3">
                 <ul class="nav">
-                    <li class="grow" title="grow the page"></li>
-                    <li class="closer" title="shrink the page"></li>
+                    <li class="grow"></li>
+                    <li class="closer"></li>
                 </ul>
 
                 <div class="separator"></div>
@@ -452,8 +396,8 @@
 
             <section class="myContacts page4">
                 <ul class="nav">
-                    <li class="grow" title="grow the page"></li>
-                    <li class="closer" title="shrink the page"></li>
+                    <li class="grow"></li>
+                    <li class="closer"></li>
                 </ul>
 
                 <div class="separator"></div>

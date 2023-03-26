@@ -1,7 +1,11 @@
 const section = document.querySelector('.myProjects');
 const projects = section.querySelectorAll('div.pr');
 const back = section.querySelector('li.rewind');
-const title = section.querySelector('h1.title');
+const title = section.querySelectorAll('h1.title');
+const divPointed = section.querySelector('div.content-pointed');
+const divGarbage = section.querySelector('div.content-garbage');
+
+console.log(divPointed);
 
 projects.forEach((project) => {
     project.addEventListener('mouseenter', () => {
@@ -28,9 +32,24 @@ projects.forEach((project) => {
             removeAll(p);
         });
         
+        var tab = divPointed.querySelectorAll('div');
+        
+        for (let i = 0; i < tab.length; i++) {
+            if (tab[i] == project) {
+                divPointed.classList.add('visible');
+                divGarbage.classList.add('invisible');
+            }
+        }
+
+        if (!divPointed.classList.contains('visible')) {
+            divGarbage.classList.add('visible');
+            divPointed.classList.add('invisible');
+        }
+
         project.classList.add('selected');
         back.classList.add('visible');
-        title.classList.add('hide');
+        title[0].classList.add('hide');
+        title[1].classList.add('hide');
         
         projects.forEach((p) => {
             if (p !== project) {
@@ -44,8 +63,13 @@ back.addEventListener('click', () => {
     projects.forEach((p) => {
         removeAll(p);
     });
+    divPointed.classList.remove('visible');
+    divGarbage.classList.remove('visible');
+    divPointed.classList.remove('invisible');
+    divGarbage.classList.remove('invisible');
     back.classList.remove('visible');
-    title.classList.remove('hide');
+    title[0].classList.remove('hide');
+    title[1].classList.remove('hide');
 });
 
 function sideClass(project) {
