@@ -296,80 +296,89 @@
                 
                 <div class="separator"></div>
                
-                <h1 class="title">My best school and personal projects</h1>
-                
-                <div class="content content-pointed">
-                    <div class="space"></div>
-                    <div class="project1 pr">
-                        <h2>Project Mazzy</h2>
-                        <p>A Javascript game that implements maze generation</p>
-                        <div class="project-content p1">
-                            
+                <div class="scroll">
+                    <h1 class="title">My best school and personal projects</h1>
+                    
+                    <div class="content content-pointed">
+                        <div class="space"></div>
+                        <div class="project1 pr">
+                            <h2>Project Mazzy</h2>
+                            <p>A Javascript game that implements maze generation</p>
+                            <div class="project-content p1">
+                                
+                            </div>
                         </div>
-                    </div>
-                    <div class="project2 pr">
-                        <h2>My Blop</h2>
-                        <p>A symphony project made in class in my second year of IUT, this is a blog so go check it yourself :)</p>
-                        <div class="project-content p4">
-                            
-                        </div>
-                    </div>
-                    <div class="project3 pr">
-                        <h2>Velovify</h2>
-                        <p>An andoroid app that fetch velov data and display it in a compact and usefull app</p>
-                        <div class="project-content p4">
-                            
-                        </div>
-                    </div>
-                    <div class="project4 pr">
-                        <h2>My website</h2>
-                        <p>A website that I made to present myself</p>
-                        <div class="project-content p4">
-                            
-                        </div>
-                    </div>
-                    <div class="space"></div>
-                </div>
-
-                <h1 class="title">All my projects</h1>
-
-                <div class="content-garbage">
-
-                    <div class="all-projects">
-
-                        <div class="project5 pr">
-                            <h2>Graph Map Analysis</h2>
-                            <p>A Java project of my second year of IUT that manipulates graphs</p>
+                        <div class="project2 pr">
+                            <h2>My Blop</h2>
+                            <p>A symphony project made in class in my second year of IUT, this is a blog so go check it yourself :)</p>
                             <div class="project-content p4">
                                 
                             </div>
                         </div>
-                        <div class="project6 pr">
-                            <h2>BUT Info Website</h2>
-                            <p>My first ever computer Science project, I've made it im my first year of IUT</p>
+                        <div class="project3 pr">
+                            <h2>Velovify</h2>
+                            <p>An andoroid app that fetch velov data and display it in a compact and usefull app</p>
                             <div class="project-content p4">
                                 
                             </div>
                         </div>
-                        <div class="project7 pr">
-                            <h2>Directory Administrator</h2>
-                            <p>A C project of my first year of IUT that manage a direcotry of clients</p>
-                            <div class="project-content p2">
-                                
-                            </div>
-                        </div>
-                        <div class="project8 pr">
-                            <h2>Name Gen</h2>
-                            <p>A Java application that generate names using a basic neural network</p>
-                            <div class="project-content p3">
-                                
-                            </div>
-                        </div>
-                        <div class="project9 pr">
-                            <h2>Bot-V-Love</h2>
-                            <p>A python bot for discord that fetch velov data and implements some functions for the user to see the velov traffic</p>
+                        <div class="project4 pr">
+                            <h2>My website</h2>
+                            <p>A website that I made to present myself</p>
                             <div class="project-content p4">
                                 
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                    </div>
+
+                    <h1 class="title">All my projects</h1>
+
+                    <div class="content-garbage">
+
+                        <div class="all-projects">
+
+                            <div class="project5 pr">
+                                <h2>Graph Map Analysis</h2>
+                                <p>A Java project of my first year of IUT that manipulates graphs</p>
+                                <div class="project-content p4">
+                                    
+                                </div>
+                            </div>
+                            <div class="project6 pr">
+                                <h2>BUT Info Website</h2>
+                                <p>My first ever computer Science project, I've made it im my first year of IUT</p>
+                                <div class="project-content p4">
+                                    
+                                </div>
+                            </div>
+                            <div class="project7 pr">
+                                <h2>Directory Administrator</h2>
+                                <p>A C project of my first year of IUT that manage a direcotry of clients</p>
+                                <div class="project-content p2">
+                                    
+                                </div>
+                            </div>
+                            <div class="project8 pr">
+                                <h2>Name Gen</h2>
+                                <p>A Java application that generate names using a basic neural network</p>
+                                <div class="project-content p3">
+                                    
+                                </div>
+                            </div>
+                            <div class="project9 pr">
+                                <h2>Bot-V-Love</h2>
+                                <p>A python bot for discord that fetch velov data and implements some functions for the user to see the velov traffic</p>
+                                <div class="project-content p4">
+                                    
+                                </div>
+                            </div>
+                            <div class="project10 pr">
+                                <h2>Sell & Buy</h2>
+                                <p>A php project of my second year of IUT, it is a big marketplace to buys and sell everything you want !</p>
+                                <div class="project-content p4">
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>

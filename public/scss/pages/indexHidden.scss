@@ -19,7 +19,8 @@ section.hiddenPages {
         flex-direction: column;
         align-items: center;
         display: flex;
-        border-radius: 11px;
+        border-top-right-radius: 11px;
+        border-top-left-radius: 11px;
         transition: all .7s ease-in-out;
 
         &.active {
@@ -353,11 +354,20 @@ section.hiddenPages {
         }
     }
 
-    section.myProjects {
-
-        &.active {
-            overflow-y: auto;
+    section.myProjects {            
+        > div.scroll {
+            overflow-y: scroll;
             overflow-x: hidden;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        &.selected {
+            > div.scroll {
+                overflow:hidden;
+                height: 100%;
+                width: 90%;
+            }
         }
         
         li.rewind {
@@ -395,11 +405,13 @@ section.hiddenPages {
             opacity: 1;
             position: relative;
             transition: fade .4s ease-in-out;
+            display: block;
 
             &.hide {
                 position: inherit;
                 opacity: 0;
-                visibility: hidden;    
+                visibility: hidden;
+                display: none;
             }
         }
 
@@ -465,7 +477,6 @@ section.hiddenPages {
                     background-image: url(../../ressources/competences.svg);
                 }
 
-
                 &.project1, &.project4 {
                     background-size: 45%;
                 }
@@ -512,6 +523,7 @@ section.hiddenPages {
                     border-bottom-left-radius: 0;
                     border-bottom-right-radius: 0;
                     background-size: 0;
+                    margin-bottom: 0;
 
                     h2 {
                         visibility: visible;
@@ -641,6 +653,7 @@ section.hiddenPages {
             justify-content: center;
             align-items: center;
             margin-top: 30px;
+            width: 100%;
 
             div {
                 --space: 2px;
@@ -662,7 +675,7 @@ section.hiddenPages {
                 align-items: center;
                 margin-bottom: 60px;
 
-                @for $k from 5 through 9 {
+                @for $k from 5 through 10 {
                     
                     @if $k % 2 == 0 {
                         &.project#{$k} {
@@ -695,8 +708,20 @@ section.hiddenPages {
                     background-image: url(../../ressources/projects/bot-velov.svg);
                 }
 
-                &.project7, &.project9, &.project8 {
+                &.project10 {
+                    background-image: url(../../ressources/projects/sab.svg);
+                }
+
+                &.project9, &.project8 {
                     background-size: 30%;
+                }
+
+                &.project7 {
+                    background-size: 25%;
+                }
+
+                &.project10 {
+                    background-size: 20%;
                 }
 
                 &.hovered {
@@ -737,6 +762,7 @@ section.hiddenPages {
                     border-bottom-left-radius: 0;
                     border-bottom-right-radius: 0;
                     background-size: 0;
+                    margin-bottom: 0;
 
                     h2 {
                         visibility: visible;

@@ -47,6 +47,7 @@ projects.forEach((project) => {
         }
 
         project.classList.add('selected');
+        section.classList.add('selected');
         back.classList.add('visible');
         title[0].classList.add('hide');
         title[1].classList.add('hide');
@@ -70,6 +71,7 @@ back.addEventListener('click', () => {
     back.classList.remove('visible');
     title[0].classList.remove('hide');
     title[1].classList.remove('hide');
+    section.classList.remove('selected');
 });
 
 function sideClass(project) {

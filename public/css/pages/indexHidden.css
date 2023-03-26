@@ -91,7 +91,8 @@ section.hiddenPages section {
   flex-direction: column;
   align-items: center;
   display: flex;
-  border-radius: 11px;
+  border-top-right-radius: 11px;
+  border-top-left-radius: 11px;
   transition: all 0.7s ease-in-out;
 }
 section.hiddenPages section.active {
@@ -355,9 +356,16 @@ section.hiddenPages section.myCompetences div.content section.cv button.download
   font-size: large;
   color: var(--primary-2);
 }
-section.hiddenPages section.myProjects.active {
-  overflow-y: auto;
+section.hiddenPages section.myProjects > div.scroll {
+  overflow-y: scroll;
   overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+section.hiddenPages section.myProjects.selected > div.scroll {
+  overflow: hidden;
+  height: 100%;
+  width: 90%;
 }
 section.hiddenPages section.myProjects li.rewind {
   height: 0px;
@@ -385,11 +393,13 @@ section.hiddenPages section.myProjects h1.title {
   opacity: 1;
   position: relative;
   transition: fade 0.4s ease-in-out;
+  display: block;
 }
 section.hiddenPages section.myProjects h1.title.hide {
   position: inherit;
   opacity: 0;
   visibility: hidden;
+  display: none;
 }
 section.hiddenPages section.myProjects div.content {
   justify-content: center;
@@ -485,6 +495,7 @@ section.hiddenPages section.myProjects div.content div.selected {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   background-size: 0;
+  margin-bottom: 0;
 }
 section.hiddenPages section.myProjects div.content div.selected h2 {
   visibility: visible;
@@ -586,6 +597,7 @@ section.hiddenPages section.myProjects div.all-projects {
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  width: 100%;
 }
 section.hiddenPages section.myProjects div.all-projects div {
   --space: 2px;
@@ -621,6 +633,9 @@ section.hiddenPages section.myProjects div.all-projects div.project8 {
 section.hiddenPages section.myProjects div.all-projects div.project9 {
   background-color: var(--project-2);
 }
+section.hiddenPages section.myProjects div.all-projects div.project10 {
+  background-color: var(--project-1);
+}
 section.hiddenPages section.myProjects div.all-projects div.project5 {
   background-image: url(../../ressources/projects/grama.svg);
 }
@@ -636,8 +651,17 @@ section.hiddenPages section.myProjects div.all-projects div.project8 {
 section.hiddenPages section.myProjects div.all-projects div.project9 {
   background-image: url(../../ressources/projects/bot-velov.svg);
 }
-section.hiddenPages section.myProjects div.all-projects div.project7, section.hiddenPages section.myProjects div.all-projects div.project9, section.hiddenPages section.myProjects div.all-projects div.project8 {
+section.hiddenPages section.myProjects div.all-projects div.project10 {
+  background-image: url(../../ressources/projects/sab.svg);
+}
+section.hiddenPages section.myProjects div.all-projects div.project9, section.hiddenPages section.myProjects div.all-projects div.project8 {
   background-size: 30%;
+}
+section.hiddenPages section.myProjects div.all-projects div.project7 {
+  background-size: 25%;
+}
+section.hiddenPages section.myProjects div.all-projects div.project10 {
+  background-size: 20%;
 }
 section.hiddenPages section.myProjects div.all-projects div.hovered {
   transform: scale(1.25);
@@ -672,6 +696,7 @@ section.hiddenPages section.myProjects div.all-projects div.selected {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   background-size: 0;
+  margin-bottom: 0;
 }
 section.hiddenPages section.myProjects div.all-projects div.selected h2 {
   visibility: visible;
