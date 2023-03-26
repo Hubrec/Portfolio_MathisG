@@ -311,7 +311,7 @@
                                 <div class="content-right">
                                     <article>
                                         <h3>What is it ?</h3>
-                                        <p>Project Mazzy is a game that I made in my first year of IUT. It is a maze game where you have to find the exit of the maze. The maze is generated randomly and the difficulty is increasing as you increase the size of the maze.</p>
+                                        <p>Project Mazzy is a game that I made in my second year of IUT. It is a maze game where you have to find the exit of the maze. The maze is generated randomly and the difficulty is increasing as you increase the size of the maze.</p>
                                         <h3>What did I learn ?</h3>
                                         <p>During this project I learned how to use the canvas element in javascript and how to use the canvas API. I also learned how to use the DOM API to create and manipulate elements.</p>
                                         <h3>What did I use ?</h3>
@@ -428,22 +428,22 @@
                             <div class="project6 pr">
                                 <h2>BUT Info Website</h2>
                                 <p>My first ever computer Science project, I've made it im my first year of IUT</p>
-                                <div class="project-content p5">
+                                <div class="project-content p6">
 
-                                    <img class="proj" src="public\ressources\projects\design\grama-screen.png" alt="My website screen">
+                                    <img class="proj" src="public\ressources\projects\design\but-info-website-screen.png" alt="My website screen">
                                     
                                     <div class="content-right">
                                         <article>
                                             <h3>What is it ?</h3>
-                                            <p>Graph Map Analysis is a Java project that I made in my first year of IUT. It is a project that manipulates graphs and that allows to find the shortest path between two points.</p>
+                                            <p>BUT Info Website is a website that I made in my first year of IUT. It is a website that present the IUT of Lyon 1 witch is my school. I kept it into my porject for the memories but it's very rough.</p>
                                             <h3>What did I learn ?</h3>
-                                            <p>During this project I learned how to use the Java language and how to manipulate graphs.</p>
+                                            <p>During this project I learned the bases of HTML and CSS and also to work with tools like gitlab and version management software.</p>
                                             <h3>What did I use ?</h3>
-                                            <p>For this project I used Java and swing for the visuals.</p>
+                                            <p>For this project I used HTML/CSS and Javascript.</p>
                                         </article>
                                         <div class="links">
-                                            <a href="https://github.com/Hubrec/SAEGraphMapAnalysis"><button class="install"><img src="public\ressources\play.svg" alt="play logo"><p>Install</p></button></a>
-                                            <a href="https://github.com/Hubrec/SAEGraphMapAnalysis"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
+                                            <a href="https://but-info.netlify.app/pages_site/site-iut-beta.html"><button class="install"><img src="public\ressources\play.svg" alt="play logo"><p>Website</p></button></a>
+                                            <a href="https://github.com/Hubrec/BUT-info-website"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -453,27 +453,89 @@
                                 <p>A C project of my first year of IUT that manage a direcotry of clients</p>
                                 <div class="project-content p7">
                                     
+                                    <img class="proj" src="public\ressources\projects\design\da-screen.png" alt="Directory administrator screen">
+                                    
+                                    <div class="content-right">
+                                        <article>
+                                            <h3>What is it ?</h3>
+                                            <p>Directory Administrator is a C project that I made in my first year of IUT. It is a project that manage a directory of clients and that allows to add, delete, modify and search clients.</p>
+                                            <h3>What did I learn ?</h3>
+                                            <p>During this project I learned how to use the C language and how to manipulate files. It also leanr how to work with a team in an computer science project.</p>
+                                            <h3>What did I use ?</h3>
+                                            <p>For this project I used C and the ncurses library for the visuals.</p>
+                                        </article>
+                                        <div class="links">
+                                            <a href="https://github.com/Hubrec/directory-administrator/blob/main/sae%20algo%20c.exe"><button class="install"><img src="public\ressources\play.svg" alt="play logo"><p>Download</p></button></a>
+                                            <a href="https://github.com/Hubrec/directory-administrator"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="project8 pr">
                                 <h2>Name Gen</h2>
-                                <p>A Java application that generate names using a basic neural network</p>
+                                <p>A Java application that generate names using a basic AI</p>
                                 <div class="project-content p8">
                                     
+                                    <img class="proj" src="public\ressources\projects\design\namegen-screen.png" alt="NameGen screen">
+                                    
+                                    <div class="content-right">
+                                        <article>
+                                            <h3>What is it ?</h3>
+                                            <p>Name Gen is a Java application that I made for myself, it was a small challenge that i wanted to do because I was curious about the result. It is a project that generate names using a basic AI.</p>
+                                            <h3>What did I learn ?</h3>
+                                            <p>During this project I learned how to use the Java language and how to manipulate data cleverly.</p>
+                                            <h3>What did I use ?</h3>
+                                            <p>For this project I used Java only.</p>
+                                        </article>
+                                        <div class="links">
+                                            <a href="https://github.com/Hubrec/nameGen"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="project9 pr">
                                 <h2>Bot-V-Love</h2>
                                 <p>A python bot for discord that fetch velov data and implements some functions for the user to see the velov traffic</p>
                                 <div class="project-content p9">
-                                    
+
+                                    <img class="proj" src="public\ressources\projects\design\bot-screen.png" alt="Bot velov second screen">
+
+                                    <div class="content-right">
+                                        <article>
+                                            <h3>What is it ?</h3>
+                                            <p>Bot-V-Love is a python bot for discord that I made in my personals projects. It is a bot that fetch velov data and implements some functions for the user to see the velov traffic.</p>
+                                            <h3>What did I learn ?</h3>
+                                            <p>During this project I learned how to use the python language and how to use the discord API.</p>
+                                            <h3>What did I use ?</h3>
+                                            <p>For this project I used python and the discord API. I also run this bot on my personal rasbery Pi with a special setup made for the occasion.</p>
+                                        </article>
+                                        <div class="links">
+                                            <a href=" mailto:mathisjp.guerin@gmail.com?subject=Bot%20Velov&body=Bonjour%2C%0D%0A%0D%0AJ'aimerai%20int%C3%A9grer%20votre%20bot%20a%20mon%20server%20%3A "><button class="install"><img src="public\ressources\play.svg" alt="play logo"><p>Add it !</p></button></a>
+                                            <a href="https://github.com/Hubrec/Bot-V-love"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="project10 pr">
                                 <h2>Sell & Buy</h2>
                                 <p>A php project of my second year of IUT, it is a big marketplace to buys and sell everything you want !</p>
                                 <div class="project-content p10">
-                                    
+
+                                    <img class="proj" src="public\ressources\projects\design\sab-screen.png" alt="Sell & buy screen">
+
+                                    <div class="content-right">
+                                        <article>
+                                            <h3>What is it ?</h3>
+                                            <p>Sell & Buy is a php project that I made in my second year of IUT. It is a big marketplace to buys and sell everything you want !</p>
+                                            <h3>What did I learn ?</h3>
+                                            <p>During this project I learned how to use the php language and how to use MVC model. I also learn a lot about team building and how to and how to develop within a team.</p>
+                                            <h3>What did I use ?</h3>
+                                            <p>For this project I used php, scss and some javascript.</p>
+                                        </article>
+                                        <div class="links">
+                                            <a href="https://forge.univ-lyon1.fr/p2106202/sae-s3"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
