@@ -6,8 +6,6 @@ const divPointed = section.querySelector('div.content-pointed');
 const divGarbage = section.querySelector('div.content-garbage');
 const space = section.querySelectorAll('div.space');
 
-console.log(divPointed);
-
 projects.forEach((project) => {
     project.addEventListener('mouseenter', () => {
         if (!project.classList.contains('selected')) {

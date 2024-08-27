@@ -1,63 +1,3 @@
-<?php
-    session_start();
-    print("<!-- ");
-    $id_session = session_id();
-
-    print("Session id : ".$id_session." <br>");
-
-    $expired = false;
-    if (array_key_exists("expires",$_SESSION)) {
-            if ($_SESSION["expires"]<time()) {
-                    $expired = true;
-                    print("Session expired <br>");
-            }
-    }
-    
-    //if (!array_key_exists("spotify_token",$_SESSION) || $expired) {
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, "https://accounts.spotify.com/api/token");
-            curl_setopt($ch, CURLOPT_POST, true);
-            $headers = [
-                'Authorization: Basic YmU5YzY0ODIzOWM5NDA1ZThlOWM0YTAyNWYzNDM4Y2I6MmJlYmE2YWE0OTBkNDU1MjhhYTViNTk3MjE5ODc0Mzk=',
-            ];
-            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, "grant_type=authorization_code&code=AQARTgT8-btZXFDpHWO9oYDK62esCZ8kXZveKOCjaRRmzQqGW6dbGoethV8lLJ4XNgbiD7FKDymzbFoqshoY7ZCl9qb9ARk9fGw9ksSaxdTP5beuFb9ftiGYXRFL79b8NzvYf6VWP4D9qdrjNk0DIvIWyxDydYGRO912YP_AdpQpw_tckCw790ChLlH5mwbSJojeayLKsPAU7N0b6-5qGNThShlhGryXSBRhyWwbvT84SZVi&redirect_uri=http%3A%2F%2Fmathis-guerin.great-site.net%2F");
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            $output = curl_exec($ch);
-            curl_close($ch);
-            print("Output ".$output." <br>");
-            $data = json_decode($output,true);
-            $token = $data['access_token'];
-            $expires = $data["expires_in"];
-            $now = time();
-            $end = $now + $expires;
-            $_SESSION["spotify_token"] = $token;
-            $_SESSION["expires"] = $end;
-    //}
-    //else {
-    //        $token = $_SESSION["spotify_token"];
-    //}
-    print("Token value ".$token." <br>");
-
-    // AQDYHso8eZF4kJsi1cQK6tYp73GSrJpFdzl58BMOEfEXepz1Mzdv6snfnEDndcS_Y0Ls3Idlg186TGQfkPlMPkYuGAtbRxF56X7F-Y2PtlElPtwzEZt4FKiOq1-jGcir7NioumcP56T7TNxVF8gD0wKpicSRf_2jHhbcBRVa62Jg9M8kGCm56tPpjNSP4C0wHK3QUGQTiZeVtSTLh-siae1D7QhAWVBMAAuZLaFe
-    //$code = "AQARTgT8-btZXFDpHWO9oYDK62esCZ8kXZveKOCjaRRmzQqGW6dbGoethV8lLJ4XNgbiD7FKDymzbFoqshoY7ZCl9qb9ARk9fGw9ksSaxdTP5beuFb9ftiGYXRFL79b8NzvYf6VWP4D9qdrjNk0DIvIWyxDydYGRO912YP_AdpQpw_tckCw790ChLlH5mwbSJojeayLKsPAU7N0b6-5qGNThShlhGryXSBRhyWwbvT84SZVi";
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://api.spotify.com/v1/me/top/tracks");
-    $headers = [
-        "Authorization: Bearer ".$_SESSION["spotify_token"],
-    ];
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    $output = curl_exec($ch);
-    print("Output : ".$output." <br>");
-    curl_close($ch);
-
-    $data = json_decode($output);
-   
-    print_r($data);
-    print(" -->");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,6 +11,7 @@
     <script src="./public/js/pages.js" defer></script>
     <script src="./public/js/backgrounds.js" defer></script>
     <script src="./public/js/competences.js" defer></script>
+    <script src="./public/js/responsive.js" defer></script>
     <script src="./public/js/scrollerProjects.js" defer></script>
 
 
@@ -178,7 +119,7 @@
                     <polygon points="279.14 66.18 218.18 59.38 240.94 0 270.03 3.25 279.14 66.18"/>
                     <circle class="cls-1" cx="230" cy="230" r="44.93" transform="translate(-33.87 420.19) rotate(-80.78)"/>
                 </svg>
-                <h1 class="titleGear3">Spotify me</h1>
+                <h1 class="titleGear3">BUT Skills</h1>
             </div>
 
             <div class="divgears">
@@ -233,6 +174,9 @@
                             <p>
                                 When I am involved in a project that interests me, it can happen that I no longer see myself for a whole week.</p>
                             </p>
+                            <p>
+                                I am currently at the end of my computer science BUT diploma with one year of practical work-study experience within an EDF development team.
+                            </p>
                         </span>
                         <div class="img">
                             <img src="public/ressources/about_me.svg" alt="image svg">
@@ -280,7 +224,7 @@
 
                     <section class="cv">
                         <h1>Download my CV here</h1>
-                        <a href="https://drive.google.com/file/d/1w4QhwTzrhw0M8C93fa0ib6b_4Tsuezl8/view?usp=share_link"><button class="download"><img src="./public/ressources/download.svg" alt="image svg"><p>Download</p></button></a>
+                        <a href="https://drive.google.com/file/d/1o-8cIr9p0KFMFGBbUGYVpzqKObaJTE2t/view?usp=sharing"><button class="download"><img src="./public/ressources/download.svg" alt="image svg"><p>Download</p></button></a>
                     </section>
 
                 </div>
@@ -371,25 +315,24 @@
                             </div>
                         </div>
                         <div class="project4 pr">
-                            <h2>My website</h2>
-                            <p>A website that I made to present myself</p>
+                            <h2>Matrix</h2>
+                            <p>Matrix is ​​an EDF application that I developed during my third year of BUT internship.</p>
                             <div class="project-content p4">
 
-                                <img class="proj" src="public\ressources\projects\design\website-screen.png" alt="My website screen">
+                                <img class="proj" src="public\ressources\projects\design\matrix.png" alt="Matrix demo screen">
 
                                 <div class="content-right">
                                     <article>
                                         <h3>What is it ?</h3>
-                                        <p>My website is a website that I made in my second year of IUT. It is a website that I made to present myself and my projects.</p>
+                                        <p>Matrix is ​​an EDF application that I developed during my third year of BUT internship.
+                                            The goal of the app is to meet the growing needs in terms of efficient management of development requests at Manufacture Digitale, the team in which I worked for a year.</p>
                                         <h3>What did I learn ?</h3>
-                                        <p>During this project I learned to use scss a lot and also how to highlight my skills and my projects.</p>
+                                        <p>I worked on this project for several months, initially on the design with the collection of customer needs and the technical design. I then developed the entire application independently.
+                                            I progressed in project management during the design of the application as well as in organizing agile ceremonies. 
+                                            I learned a lot technically, in particular thanks to having to deal with all the development phases from the initialization of the application to maintenance and bug resolution.</p>
                                         <h3>What did I use ?</h3>
-                                        <p>For this project PHP, scss and Javascript.</p>
+                                        <p>The technical stack of the project is Angular (with RxJs, NgRx, tailwind) on the frontend and Java Spring Boot on the backend.</p>
                                     </article>
-                                    <div class="links">
-                                        <a href="http://portfolio.mathisguerin.fr"><button class="website"><img src="public\ressources\play.svg" alt="play logo"><p>Website</p></button></a>
-                                        <a href="https://github.com/Hubrec/Portfolio_MathisG"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -538,7 +481,38 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="project11 pr">
+                                <h2>My website</h2>
+                                <p>A website that I made to present myself</p>
+                                <div class="project-content p4">
+    
+                                    <img class="proj" src="public\ressources\projects\design\website-screen.png" alt="My website screen">
+    
+                                    <div class="content-right">
+                                        <article>
+                                            <h3>What is it ?</h3>
+                                            <p>My website is a website that I made in my second year of IUT. It is a website that I made to present myself and my projects.</p>
+                                            <h3>What did I learn ?</h3>
+                                            <p>During this project I learned to use scss a lot and also how to highlight my skills and my projects.</p>
+                                            <h3>What did I use ?</h3>
+                                            <p>For this project PHP, scss and Javascript.</p>
+                                        </article>
+                                        <div class="links">
+                                            <a href="http://portfolio.mathisguerin.fr"><button class="website"><img src="public\ressources\play.svg" alt="play logo"><p>Website</p></button></a>
+                                            <a href="https://github.com/Hubrec/Portfolio_MathisG"><button class="code"><img src="public\ressources\download.svg" alt="see logo"><p>Repository</p></button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="mobile-message">
+                    <h1 class="title">My Projects</h1>
+
+                    <div class="content">
+                        <h3>Mobile not supported, go on desktop to see my projects</h3>
                     </div>
                 </div>
 
@@ -552,11 +526,38 @@
 
                 <div class="separator"></div>
 
-                <h1>My spotify page</h1>
+                <h1>All BUT Skills from first to third year</h1>
 
                 <div class="content">
-                    <h2>Nothing here for the moment</h2>
-                    <h2>Work INFOgress...</h2>
+                    <div class="card bg-1">
+                        <h3>Application development</h3>
+                        <p>Thanks to my learning from BUT as well as all school, professional and personal projects, I am versatile and know how to develop mobile, web and software applications.</p>
+                    </div>
+                    <div class="card bg-2">
+
+                        <h3>Teamwork</h3>
+                        <p>Whether during team projects at school or in business, I am used to working within a team and have learned through my experiences to know and occupy my place within a team. </p>
+                    </div>
+                    <div class="card bg-1">
+
+                        <h3>Application optimization</h3>
+                        <p>After carrying out performance audits, I resolve memory leaks and optimize the complex algorithms that I develop to improve the overall efficiency of my projects.</p>
+                    </div>
+                    <div class="card bg-2">
+
+                        <h3>Administration of complex IT systems</h3>
+                        <p>I know how to manage the automatic deployment of an application using CI/CD tools and I ensure that each stage of the pipeline is optimized to guarantee rapid and reliable delivery to production.</p>
+                    </div>
+                    <div class="card bg-1">
+
+                        <h3>Data and information management</h3>
+                        <p>With training in database design and analysis, along with hands-on experience applying these skills, I am proficient in modeling and optimizing information systems effectively.</p>
+                    </div>
+                    <div class="card bg-2">
+
+                        <h3>Project management</h3>
+                        <p>I leverage my leadership to steer my team toward achieving goals by implementing agile methodologies. With a deep understanding of agile practices, I effectively apply them in a professional context.</p>
+                    </div>
                 </div>
 
             </section>

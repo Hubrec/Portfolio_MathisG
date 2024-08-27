@@ -450,7 +450,7 @@ section.hiddenPages section.myProjects div.content div.project3 {
   background-image: url(../../ressources/projects/velovify.svg);
 }
 section.hiddenPages section.myProjects div.content div.project4 {
-  background-image: url(../../ressources/competences.svg);
+  background-image: url(../../ressources/projects/matrix.svg);
 }
 section.hiddenPages section.myProjects div.content div.project1, section.hiddenPages section.myProjects div.content div.project4 {
   background-size: 45%;
@@ -640,6 +640,9 @@ section.hiddenPages section.myProjects div.all-projects div.project9 {
 section.hiddenPages section.myProjects div.all-projects div.project10 {
   background-color: var(--project-1);
 }
+section.hiddenPages section.myProjects div.all-projects div.project11 {
+  background-color: var(--project-2);
+}
 section.hiddenPages section.myProjects div.all-projects div.project5 {
   background-image: url(../../ressources/projects/grama.svg);
 }
@@ -658,6 +661,9 @@ section.hiddenPages section.myProjects div.all-projects div.project9 {
 section.hiddenPages section.myProjects div.all-projects div.project10 {
   background-image: url(../../ressources/projects/sab.svg);
 }
+section.hiddenPages section.myProjects div.all-projects div.project11 {
+  background-image: url(../../ressources/competences.svg);
+}
 section.hiddenPages section.myProjects div.all-projects div.project9, section.hiddenPages section.myProjects div.all-projects div.project8 {
   background-size: 30%;
 }
@@ -665,6 +671,9 @@ section.hiddenPages section.myProjects div.all-projects div.project7 {
   background-size: 25%;
 }
 section.hiddenPages section.myProjects div.all-projects div.project10 {
+  background-size: 20%;
+}
+section.hiddenPages section.myProjects div.all-projects div.project11 {
   background-size: 20%;
 }
 section.hiddenPages section.myProjects div.all-projects div.hovered {
@@ -795,9 +804,27 @@ section.hiddenPages section.myProjects div.all-projects div div.project-content 
 }
 section.hiddenPages section.spotifyAlpha div.content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+section.hiddenPages section.spotifyAlpha div.content div.card {
+  padding: 20px;
+  margin: 30px;
+  width: 300px;
+  border-radius: 5px;
+}
+section.hiddenPages section.spotifyAlpha div.content div.card p {
+  text-align: justify;
+}
+section.hiddenPages section.spotifyAlpha div.content div.card.bg-1 {
+  background-color: var(--project-1);
+}
+section.hiddenPages section.spotifyAlpha div.content div.card.bg-2 {
+  background-color: var(--project-2);
 }
 
 /*# sourceMappingURL=indexHidden.css.map */

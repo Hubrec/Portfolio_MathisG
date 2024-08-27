@@ -470,7 +470,7 @@ section.hiddenPages {
                 }
 
                 &.project4 {
-                    background-image: url(../../ressources/competences.svg);
+                    background-image: url(../../ressources/projects/matrix.svg);
                 }
 
                 &.project1, &.project4 {
@@ -679,7 +679,7 @@ section.hiddenPages {
                 align-items: center;
                 margin-bottom: 60px;
 
-                @for $k from 5 through 10 {
+                @for $k from 5 through 11 {
                     
                     @if $k % 2 == 0 {
                         &.project#{$k} {
@@ -716,6 +716,10 @@ section.hiddenPages {
                     background-image: url(../../ressources/projects/sab.svg);
                 }
 
+                &.project11 {
+                    background-image: url(../../ressources/competences.svg);
+                }
+
                 &.project9, &.project8 {
                     background-size: 30%;
                 }
@@ -725,6 +729,10 @@ section.hiddenPages {
                 }
 
                 &.project10 {
+                    background-size: 20%;
+                }
+
+                &.project11 {
                     background-size: 20%;
                 }
 
@@ -886,9 +894,31 @@ section.hiddenPages {
        
         div.content {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+            scroll-behavior: smooth;
+            overflow-y: scroll;
+
+            div.card {
+                padding: 20px;
+                margin: 30px;
+                width: 300px;
+                border-radius: 5px;
+
+                p {
+                    text-align: justify;
+                }
+
+                &.bg-1 {
+                    background-color: var(--project-1);
+                }
+
+                &.bg-2 {
+                    background-color: var(--project-2);
+                }
+            }
         }
     }
 }

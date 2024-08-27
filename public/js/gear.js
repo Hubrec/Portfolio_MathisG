@@ -54,36 +54,6 @@ document.onmousemove = function(e) {
         gear4[0].style.transform = 'rotate(' + angle_gear4 + 'deg)';
     }
 
-    blurGears();
-};
-
-function blurGears() {
-    if (gear4[0].classList.contains('hover')) {
-        gear1[0].style.opacity = opacityPercent;
-        gear2[0].style.opacity = opacityPercent;
-        gear3[0].style.opacity = opacityPercent;
-        gear4[0].style.opacity = "100%";
-    } else if (gear3[0].classList.contains('hover')) {
-        gear1[0].style.opacity = opacityPercent;
-        gear2[0].style.opacity = opacityPercent;
-        gear3[0].style.opacity = "100%";
-        gear4[0].style.opacity = opacityPercent;
-    } else if (gear2[0].classList.contains('hover')) {
-        gear1[0].style.opacity = opacityPercent;
-        gear2[0].style.opacity = "100%";
-        gear3[0].style.opacity = opacityPercent;
-        gear4[0].style.opacity = opacityPercent;
-    } else if (gear1[0].classList.contains('hover')) {
-        gear1[0].style.opacity = "100%";
-        gear2[0].style.opacity = opacityPercent;
-        gear3[0].style.opacity = opacityPercent;
-        gear4[0].style.opacity = opacityPercent;
-    } else {
-        gear1[0].style.opacity = "100%";
-        gear2[0].style.opacity = "100%";
-        gear3[0].style.opacity = "100%";
-        gear4[0].style.opacity = "100%";
-    }
 };
 
 gear1[0].onmouseenter = function() {
